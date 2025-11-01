@@ -1,0 +1,433 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Monochrome/Tan Color Scheme Override */
+:root {
+    --golf-tan-light: #f5f2ed;
+    --golf-tan: #d4c3a0;
+    --golf-tan-dark: #b59f7a;
+    --golf-grey-light: #e5e5e5;
+    --golf-grey: #9e9e9e;
+    --golf-grey-dark: #666666;
+    --golf-charcoal: #4a4a4a;
+    --golf-charcoal-dark: #2c2c2c;
+    --golf-success: var(--golf-tan-dark);
+    --golf-danger: var(--golf-grey-dark);
+    --golf-warning: var(--golf-tan);
+    --golf-info: var(--golf-grey);
+}
+
+/* Navigation Bar */
+.navbar.bg-success {
+    background-color: var(--golf-charcoal) !important;
+}
+
+.navbar.bg-success .navbar-nav .nav-link {
+    color: white !important;
+}
+
+.navbar.bg-success .navbar-nav .nav-link:hover {
+    color: var(--golf-tan-light) !important;
+}
+
+.navbar.bg-success .navbar-brand {
+    color: white !important;
+}
+
+.navbar.bg-success .navbar-brand:hover {
+    color: var(--golf-tan-light) !important;
+}
+
+.navbar.bg-success .dropdown-menu {
+    background-color: var(--golf-charcoal) !important;
+    border: 1px solid var(--golf-grey) !important;
+}
+
+.navbar.bg-success .dropdown-item {
+    color: white !important;
+}
+
+.navbar.bg-success .dropdown-item:hover {
+    background-color: var(--golf-tan-dark) !important;
+    color: white !important;
+}
+
+.navbar.bg-success .navbar-toggler {
+    border-color: var(--golf-tan-light) !important;
+}
+
+.navbar.bg-success .navbar-toggler-icon {
+    filter: invert(1) !important;
+}
+
+/* Ensure navbar has proper z-index and visibility */
+.navbar {
+    z-index: 1050 !important;
+    position: relative !important;
+}
+
+/* Fix any potential text visibility issues */
+.navbar * {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Debugging: Force navbar to be always visible */
+.navbar,
+.navbar-nav,
+.nav-item,
+.nav-link,
+.navbar-brand {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: static !important;
+}
+
+.navbar-nav {
+    display: flex !important;
+}
+
+.nav-item {
+    display: list-item !important;
+}
+
+/* Force text to be visible with contrasting colors */
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 1) !important;
+    font-weight: 500 !important;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: var(--golf-tan-light) !important;
+}
+
+.navbar-dark .navbar-brand {
+    color: rgba(255, 255, 255, 1) !important;
+    font-weight: bold !important;
+}
+
+/* Body Background */
+body.bg-light {
+    background-color: var(--golf-tan-light) !important;
+}
+
+/* Footer */
+.bg-dark {
+    background-color: var(--golf-charcoal-dark) !important;
+}
+
+/* Badge Colors */
+.badge.bg-primary {
+    background-color: var(--golf-grey) !important;
+    color: white !important;
+}
+
+.badge.bg-success {
+    background-color: var(--golf-tan-dark) !important;
+    color: white !important;
+}
+
+.badge.bg-secondary {
+    background-color: var(--golf-grey-dark) !important;
+    color: white !important;
+}
+
+.badge.bg-info {
+    background-color: var(--golf-grey) !important;
+    color: white !important;
+}
+
+.badge.bg-warning {
+    background-color: var(--golf-tan) !important;
+    color: var(--golf-charcoal) !important;
+}
+
+.badge.bg-danger {
+    background-color: var(--golf-grey-dark) !important;
+    color: white !important;
+}
+
+/* Card Backgrounds */
+.card.bg-success {
+    background-color: var(--golf-tan-dark) !important;
+}
+
+.card.bg-primary {
+    background-color: var(--golf-grey) !important;
+}
+
+.card.bg-warning {
+    background-color: var(--golf-tan) !important;
+    color: var(--golf-charcoal) !important;
+}
+
+.card.bg-info {
+    background-color: var(--golf-grey) !important;
+}
+
+/* Dashboard specific overrides */
+.bg-success {
+    background-color: var(--golf-tan-dark) !important;
+}
+
+.bg-primary {
+    background-color: var(--golf-grey) !important;
+}
+
+.bg-warning {
+    background-color: var(--golf-tan) !important;
+    color: var(--golf-charcoal) !important;
+}
+
+.bg-info {
+    background-color: var(--golf-grey) !important;
+}
+
+/* Table Header Colors */
+.bg-info.text-white {
+    background-color: var(--golf-grey) !important;
+    color: white !important;
+}
+
+.bg-warning.text-dark {
+    background-color: var(--golf-tan) !important;
+    color: var(--golf-charcoal) !important;
+}
+
+.bg-success.text-white {
+    background-color: var(--golf-tan-dark) !important;
+    color: white !important;
+}
+
+/* Card Headers */
+.card-header.bg-danger {
+    background-color: var(--golf-grey-dark) !important;
+}
+
+.card-header.bg-warning {
+    background-color: var(--golf-tan) !important;
+    color: var(--golf-charcoal) !important;
+}
+
+/* Modal Headers */
+.modal-header.bg-warning {
+    background-color: var(--golf-tan) !important;
+    color: var(--golf-charcoal) !important;
+}
+
+.modal-header.bg-danger {
+    background-color: var(--golf-grey-dark) !important;
+}
+
+/* Button Colors */
+.btn-primary {
+    --bs-btn-bg: var(--golf-grey);
+    --bs-btn-border-color: var(--golf-grey);
+    --bs-btn-hover-bg: var(--golf-grey-dark);
+    --bs-btn-hover-border-color: var(--golf-grey-dark);
+    --bs-btn-active-bg: var(--golf-grey-dark);
+    --bs-btn-active-border-color: var(--golf-grey-dark);
+}
+
+.btn-success {
+    --bs-btn-bg: var(--golf-tan-dark);
+    --bs-btn-border-color: var(--golf-tan-dark);
+    --bs-btn-hover-bg: #9c8760;
+    --bs-btn-hover-border-color: #9c8760;
+    --bs-btn-active-bg: #9c8760;
+    --bs-btn-active-border-color: #9c8760;
+}
+
+.btn-info {
+    --bs-btn-bg: var(--golf-grey);
+    --bs-btn-border-color: var(--golf-grey);
+    --bs-btn-hover-bg: var(--golf-grey-dark);
+    --bs-btn-hover-border-color: var(--golf-grey-dark);
+    --bs-btn-active-bg: var(--golf-grey-dark);
+    --bs-btn-active-border-color: var(--golf-grey-dark);
+}
+
+.btn-warning {
+    --bs-btn-bg: var(--golf-tan);
+    --bs-btn-border-color: var(--golf-tan);
+    --bs-btn-color: var(--golf-charcoal);
+    --bs-btn-hover-bg: var(--golf-tan-dark);
+    --bs-btn-hover-border-color: var(--golf-tan-dark);
+    --bs-btn-hover-color: white;
+    --bs-btn-active-bg: var(--golf-tan-dark);
+    --bs-btn-active-border-color: var(--golf-tan-dark);
+    --bs-btn-active-color: white;
+}
+
+.btn-danger {
+    --bs-btn-bg: var(--golf-grey-dark);
+    --bs-btn-border-color: var(--golf-grey-dark);
+    --bs-btn-hover-bg: var(--golf-charcoal);
+    --bs-btn-hover-border-color: var(--golf-charcoal);
+    --bs-btn-active-bg: var(--golf-charcoal);
+    --bs-btn-active-border-color: var(--golf-charcoal);
+}
+
+/* Outline Button Colors */
+.btn-outline-primary {
+    --bs-btn-color: var(--golf-grey);
+    --bs-btn-border-color: var(--golf-grey);
+    --bs-btn-hover-bg: var(--golf-grey);
+    --bs-btn-hover-border-color: var(--golf-grey);
+    --bs-btn-active-bg: var(--golf-grey);
+    --bs-btn-active-border-color: var(--golf-grey);
+}
+
+.btn-outline-success {
+    --bs-btn-color: var(--golf-tan-dark);
+    --bs-btn-border-color: var(--golf-tan-dark);
+    --bs-btn-hover-bg: var(--golf-tan-dark);
+    --bs-btn-hover-border-color: var(--golf-tan-dark);
+    --bs-btn-active-bg: var(--golf-tan-dark);
+    --bs-btn-active-border-color: var(--golf-tan-dark);
+}
+
+.btn-outline-info {
+    --bs-btn-color: var(--golf-grey);
+    --bs-btn-border-color: var(--golf-grey);
+    --bs-btn-hover-bg: var(--golf-grey);
+    --bs-btn-hover-border-color: var(--golf-grey);
+    --bs-btn-active-bg: var(--golf-grey);
+    --bs-btn-active-border-color: var(--golf-grey);
+}
+
+.btn-outline-warning {
+    --bs-btn-color: var(--golf-tan-dark);
+    --bs-btn-border-color: var(--golf-tan);
+    --bs-btn-hover-bg: var(--golf-tan);
+    --bs-btn-hover-border-color: var(--golf-tan);
+    --bs-btn-hover-color: var(--golf-charcoal);
+    --bs-btn-active-bg: var(--golf-tan);
+    --bs-btn-active-border-color: var(--golf-tan);
+    --bs-btn-active-color: var(--golf-charcoal);
+}
+
+.btn-outline-danger {
+    --bs-btn-color: var(--golf-grey-dark);
+    --bs-btn-border-color: var(--golf-grey-dark);
+    --bs-btn-hover-bg: var(--golf-grey-dark);
+    --bs-btn-hover-border-color: var(--golf-grey-dark);
+    --bs-btn-active-bg: var(--golf-grey-dark);
+    --bs-btn-active-border-color: var(--golf-grey-dark);
+}
+
+.btn-outline-secondary {
+    --bs-btn-color: var(--golf-grey-dark);
+    --bs-btn-border-color: var(--golf-grey-dark);
+    --bs-btn-hover-bg: var(--golf-grey-dark);
+    --bs-btn-hover-border-color: var(--golf-grey-dark);
+    --bs-btn-active-bg: var(--golf-grey-dark);
+    --bs-btn-active-border-color: var(--golf-grey-dark);
+}
+
+/* Links */
+a {
+    color: var(--golf-tan-dark);
+}
+
+a:hover {
+    color: #9c8760;
+}
+
+/* Form Controls */
+.form-control:focus {
+    border-color: var(--golf-tan-dark);
+    box-shadow: 0 0 0 0.2rem rgba(181, 159, 122, 0.25);
+}
+
+.form-select:focus {
+    border-color: var(--golf-tan-dark);
+    box-shadow: 0 0 0 0.2rem rgba(181, 159, 122, 0.25);
+}
+
+/* Alert Colors */
+.alert-info {
+    --bs-alert-bg: var(--golf-tan-light);
+    --bs-alert-border-color: var(--golf-tan);
+    --bs-alert-color: var(--golf-charcoal);
+}
+
+.alert-success {
+    --bs-alert-bg: #ede7d9;
+    --bs-alert-border-color: var(--golf-tan-dark);
+    --bs-alert-color: var(--golf-charcoal);
+}
+
+.alert-warning {
+    --bs-alert-bg: var(--golf-tan-light);
+    --bs-alert-border-color: var(--golf-tan);
+    --bs-alert-color: var(--golf-charcoal);
+}
+
+.alert-secondary {
+    --bs-alert-bg: #f0f0f0;
+    --bs-alert-border-color: var(--golf-grey);
+    --bs-alert-color: var(--golf-charcoal);
+}
+
+/* Table Headers and Cells */
+th.bg-info,
+td.bg-info {
+    background-color: var(--golf-grey) !important;
+    color: white !important;
+}
+
+th.bg-warning,
+td.bg-warning {
+    background-color: var(--golf-tan) !important;
+    color: var(--golf-charcoal) !important;
+}
+
+th.bg-success,
+td.bg-success {
+    background-color: var(--golf-tan-dark) !important;
+    color: white !important;
+}
+
+th.bg-primary,
+td.bg-primary {
+    background-color: var(--golf-grey) !important;
+    color: white !important;
+}
+
+th.bg-secondary,
+td.bg-secondary {
+    background-color: var(--golf-grey-dark) !important;
+    color: white !important;
+}
+
+th.bg-danger,
+td.bg-danger {
+    background-color: var(--golf-grey-dark) !important;
+    color: white !important;
+}
+
+/* Table headers with combined classes */
+.table-success > :not(caption) > * > * {
+    --bs-table-bg: var(--golf-tan-light);
+    --bs-table-color: var(--golf-charcoal);
+}
+
+/* Special Golf Scoring Colors */
+.score-under-par {
+    background-color: var(--golf-tan-dark) !important;
+    color: white !important;
+}
+
+.score-over-par {
+    background-color: var(--golf-grey-dark) !important;
+    color: white !important;
+}
+
+.score-par {
+    background-color: var(--golf-grey) !important;
+    color: white !important;
+}
