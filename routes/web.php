@@ -5,9 +5,17 @@ use App\Http\Controllers\TournamentController;
 use App\Http\Controllers\TournamentEntryController;
 use App\Http\Controllers\ScoreController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [TournamentController::class, 'index']);
+// Home and main site pages
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/facilities', [HomeController::class, 'facilities'])->name('facilities');
+Route::get('/rates', [HomeController::class, 'rates'])->name('rates');
+Route::get('/tee-times', [HomeController::class, 'teeTimes'])->name('tee-times');
+Route::get('/instruction', [HomeController::class, 'instruction'])->name('instruction');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 // Debug route to check auth status
 Route::get('/debug-auth', function () {
