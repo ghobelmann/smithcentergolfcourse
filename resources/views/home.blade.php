@@ -6,39 +6,123 @@
     <title>Smith Center Golf Course</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .navbar {
+            padding: 0.5rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .navbar-brand {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        .nav-link {
+            font-size: 0.95rem;
+            padding: 0.5rem 1rem !important;
+            font-weight: 500;
+        }
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
                         url('https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
-            height: 500px;
+            height: 70vh;
+            min-height: 500px;
+            max-height: 700px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-align: center;
         }
-        .card-icon {
-            font-size: 3rem;
-            color: #2d5f2e;
+        .hero-section h1 {
+            font-size: 3.5rem;
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .hero-section .lead {
+            font-size: 1.5rem;
+            font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .btn-lg {
+            padding: 0.75rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        .card-icon {
+            font-size: 2.5rem;
+            color: #2d5f2e;
+            margin-bottom: 0.75rem;
         }
         .quick-link-card {
             transition: transform 0.3s, box-shadow 0.3s;
             border: none;
             height: 100%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         .quick-link-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .quick-link-card .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        .quick-link-card .card-text {
+            font-size: 0.95rem;
+            color: #6c757d;
         }
         .tournament-card {
             border-left: 4px solid #2d5f2e;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         .info-section {
             background-color: #f8f9fa;
-            padding: 3rem 0;
+            padding: 4rem 0;
+        }
+        .info-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .info-section .lead {
+            font-size: 1.15rem;
+            color: #6c757d;
+        }
+        section h2 {
+            font-size: 2.25rem;
+            margin-bottom: 2rem;
+        }
+        footer {
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            .hero-section .lead {
+                font-size: 1.15rem;
+            }
+            .hero-section {
+                height: 60vh;
+                min-height: 400px;
+            }
+            .info-section h2 {
+                font-size: 2rem;
+            }
+            section h2 {
+                font-size: 1.75rem;
+            }
         }
     </style>
 </head>
@@ -117,13 +201,13 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
-            <h1 class="display-3 fw-bold mb-3">Welcome to Smith Center Golf Course</h1>
-            <p class="lead mb-4">Experience the perfect blend of challenge and beauty</p>
-            <div class="d-flex gap-3 justify-content-center">
-                <a href="{{ route('tee-times') }}" class="btn btn-light btn-lg">
+            <h1 class="fw-bold mb-4">Welcome to Smith Center Golf Course</h1>
+            <p class="lead mb-5">Experience the perfect blend of challenge and beauty</p>
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="{{ route('tee-times') }}" class="btn btn-light btn-lg px-4">
                     <i class="fas fa-calendar-alt me-2"></i>Book Tee Time
                 </a>
-                <a href="{{ route('rates') }}" class="btn btn-outline-light btn-lg">
+                <a href="{{ route('rates') }}" class="btn btn-outline-light btn-lg px-4">
                     <i class="fas fa-dollar-sign me-2"></i>View Rates
                 </a>
             </div>
@@ -131,44 +215,44 @@
     </section>
 
     <!-- Quick Links Section -->
-    <section class="container my-5">
+    <section class="container my-5 py-4">
         <div class="row g-4">
-            <div class="col-md-3">
-                <div class="card quick-link-card text-center p-4">
+            <div class="col-md-3 col-sm-6">
+                <div class="card quick-link-card text-center p-3">
                     <div class="card-body">
                         <i class="fas fa-clock card-icon"></i>
                         <h5 class="card-title">Tee Times</h5>
-                        <p class="card-text">Reserve your spot on the course</p>
+                        <p class="card-text mb-3">Reserve your spot on the course</p>
                         <a href="{{ route('tee-times') }}" class="btn btn-success">Book Now</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card quick-link-card text-center p-4">
+            <div class="col-md-3 col-sm-6">
+                <div class="card quick-link-card text-center p-3">
                     <div class="card-body">
                         <i class="fas fa-trophy card-icon"></i>
                         <h5 class="card-title">Tournaments</h5>
-                        <p class="card-text">View and register for events</p>
+                        <p class="card-text mb-3">View and register for events</p>
                         <a href="{{ route('tournaments.index') }}" class="btn btn-success">View Events</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card quick-link-card text-center p-4">
+            <div class="col-md-3 col-sm-6">
+                <div class="card quick-link-card text-center p-3">
                     <div class="card-body">
                         <i class="fas fa-graduation-cap card-icon"></i>
                         <h5 class="card-title">Instruction</h5>
-                        <p class="card-text">Improve your game with lessons</p>
+                        <p class="card-text mb-3">Improve your game with lessons</p>
                         <a href="{{ route('instruction') }}" class="btn btn-success">Learn More</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card quick-link-card text-center p-4">
+            <div class="col-md-3 col-sm-6">
+                <div class="card quick-link-card text-center p-3">
                     <div class="card-body">
                         <i class="fas fa-info-circle card-icon"></i>
                         <h5 class="card-title">About Us</h5>
-                        <p class="card-text">Learn about our course</p>
+                        <p class="card-text mb-3">Learn about our course</p>
                         <a href="{{ route('about') }}" class="btn btn-success">Discover</a>
                     </div>
                 </div>
@@ -179,25 +263,25 @@
     <!-- Course Info Section -->
     <section class="info-section">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
                     <h2 class="mb-4">A Premier Golf Experience</h2>
-                    <p class="lead mb-3">
+                    <p class="lead mb-4">
                         Smith Center Golf Course offers an exceptional golfing experience for players of all skill levels.
                     </p>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>18-hole championship course</li>
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Well-maintained greens and fairways</li>
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Pro shop and practice facilities</li>
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Professional instruction available</li>
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Tournament hosting and scoring</li>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-3"><i class="fas fa-check-circle text-success me-3"></i>18-hole championship course</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success me-3"></i>Well-maintained greens and fairways</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success me-3"></i>Pro shop and practice facilities</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success me-3"></i>Professional instruction available</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success me-3"></i>Tournament hosting and scoring</li>
                     </ul>
-                    <a href="{{ route('about') }}" class="btn btn-success mt-3">Learn More About Us</a>
+                    <a href="{{ route('about') }}" class="btn btn-success btn-lg">Learn More About Us</a>
                 </div>
-                <div class="col-md-6">
+                <div class="col-lg-6">
                     <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                          alt="Golf Course" 
-                         class="img-fluid rounded shadow">
+                         class="img-fluid rounded shadow-lg">
                 </div>
             </div>
         </div>
@@ -205,8 +289,8 @@
 
     <!-- Upcoming Tournaments Section -->
     @if($upcomingTournaments->count() > 0)
-    <section class="container my-5">
-        <h2 class="text-center mb-4">Upcoming Tournaments</h2>
+    <section class="container my-5 py-4">
+        <h2 class="text-center mb-5">Upcoming Tournaments</h2>
         <div class="row g-4">
             @foreach($upcomingTournaments as $tournament)
             <div class="col-md-4">
@@ -233,25 +317,25 @@
     <!-- Hours & Contact Section -->
     <section class="bg-dark text-white py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h4 class="mb-3"><i class="fas fa-clock me-2"></i>Hours</h4>
-                    <p>
+            <div class="row g-4">
+                <div class="col-md-4 text-center text-md-start">
+                    <h5 class="mb-3"><i class="fas fa-clock me-2"></i>Hours</h5>
+                    <p class="mb-0">
                         <strong>Open year round</strong><br>
                         Weather permitting<br>
                         Dawn to Dusk
                     </p>
                 </div>
-                <div class="col-md-4">
-                    <h4 class="mb-3"><i class="fas fa-phone me-2"></i>Contact</h4>
-                    <p>
+                <div class="col-md-4 text-center text-md-start">
+                    <h5 class="mb-3"><i class="fas fa-phone me-2"></i>Contact</h5>
+                    <p class="mb-0">
                         Phone: (555) 123-4567<br>
                         Email: info@smithcentergolf.com
                     </p>
                 </div>
-                <div class="col-md-4">
-                    <h4 class="mb-3"><i class="fas fa-map-marker-alt me-2"></i>Location</h4>
-                    <p>
+                <div class="col-md-4 text-center text-md-start">
+                    <h5 class="mb-3"><i class="fas fa-map-marker-alt me-2"></i>Location</h5>
+                    <p class="mb-3">
                         123 Golf Course Road<br>
                         Smith Center, KS 66967
                     </p>

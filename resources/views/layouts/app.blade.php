@@ -9,6 +9,90 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .navbar {
+            padding: 0.5rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .navbar-brand {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        .navbar-brand i {
+            font-size: 1.1rem;
+        }
+        .nav-link {
+            font-size: 0.95rem;
+            padding: 0.5rem 1rem !important;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: rgba(255,255,255,0.8) !important;
+        }
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-radius: 0.5rem;
+        }
+        .dropdown-item {
+            padding: 0.5rem 1.25rem;
+            font-size: 0.95rem;
+        }
+        .dropdown-item:hover {
+            background-color: #f8f9fa;
+        }
+        main {
+            min-height: calc(100vh - 200px);
+        }
+        footer {
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+        .page-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .lead {
+            font-size: 1.15rem;
+            color: #6c757d;
+        }
+        .card {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background-color: #198754;
+                padding: 1rem;
+                margin-top: 0.5rem;
+                border-radius: 0.5rem;
+            }
+            .navbar-nav {
+                gap: 0.25rem;
+            }
+            .nav-link {
+                padding: 0.75rem 1rem !important;
+            }
+        }
+    </style>
     
     @stack('styles')
 </head>
@@ -20,7 +104,7 @@
                 <i class="fas fa-golf-ball me-2"></i>
                 Smith Center Golf Course
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
