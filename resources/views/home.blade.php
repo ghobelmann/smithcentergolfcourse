@@ -214,9 +214,9 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $tournament->name }}</h5>
                         <p class="card-text">
-                            <i class="fas fa-calendar me-2"></i>{{ $tournament->date->format('F j, Y') }}<br>
+                            <i class="fas fa-calendar me-2"></i>{{ \Carbon\Carbon::parse($tournament->start_date)->format('F j, Y') }}<br>
                             <i class="fas fa-map-marker-alt me-2"></i>{{ $tournament->course->name ?? 'TBD' }}<br>
-                            <i class="fas fa-users me-2"></i>{{ $tournament->format }}
+                            <i class="fas fa-users me-2"></i>{{ $tournament->format ?? 'Stroke Play' }}
                         </p>
                         <a href="{{ route('tournaments.show', $tournament) }}" class="btn btn-outline-success">View Details</a>
                     </div>

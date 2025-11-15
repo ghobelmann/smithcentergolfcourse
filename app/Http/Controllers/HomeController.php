@@ -10,8 +10,8 @@ class HomeController extends Controller
     public function index()
     {
         // Get upcoming tournaments for homepage
-        $upcomingTournaments = Tournament::where('date', '>=', now())
-            ->orderBy('date', 'asc')
+        $upcomingTournaments = Tournament::where('start_date', '>=', now()->toDateString())
+            ->orderBy('start_date', 'asc')
             ->take(3)
             ->get();
 
