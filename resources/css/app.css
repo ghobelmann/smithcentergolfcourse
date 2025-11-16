@@ -2,6 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    body {
+        @apply font-sans antialiased;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-display font-bold;
+    }
+}
+
+@layer components {
+    .btn-primary {
+        @apply px-6 py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 transition shadow-md hover:shadow-lg;
+    }
+    
+    .btn-secondary {
+        @apply px-6 py-3 bg-gray-600 text-white rounded-lg font-medium hover:bg-gray-700 transition shadow-md hover:shadow-lg;
+    }
+    
+    .btn-outline {
+        @apply px-6 py-3 border-2 border-emerald-600 text-emerald-600 rounded-lg font-medium hover:bg-emerald-600 hover:text-white transition;
+    }
+    
+    .card {
+        @apply bg-white rounded-xl shadow-md overflow-hidden transition-all hover:shadow-xl;
+    }
+    
+    .card-header {
+        @apply px-6 py-4 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white;
+    }
+    
+    .card-body {
+        @apply px-6 py-4;
+    }
+}
+
+/* Keep existing golf-specific classes for backward compatibility */
 /* Monochrome/Tan Color Scheme Override */
 :root {
     --golf-tan-light: #f5f2ed;

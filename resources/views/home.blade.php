@@ -1,366 +1,235 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Smith Center Golf Course</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            font-size: 16px;
-            line-height: 1.6;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-        .navbar {
-            padding: 0.5rem 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .navbar-brand {
-            font-size: 1.25rem;
-            font-weight: 600;
-        }
-        .nav-link {
-            font-size: 0.95rem;
-            padding: 0.5rem 1rem !important;
-            font-weight: 500;
-        }
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                        url('https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 70vh;
-            min-height: 500px;
-            max-height: 700px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-        }
-        .hero-section h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        .hero-section .lead {
-            font-size: 1.5rem;
-            font-weight: 300;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-        }
-        .btn-lg {
-            padding: 0.75rem 2rem;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-        .card-icon {
-            font-size: 2.5rem;
-            color: #2d5f2e;
-            margin-bottom: 0.75rem;
-        }
-        .quick-link-card {
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: none;
-            height: 100%;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-        .quick-link-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-        .quick-link-card .card-title {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-        .quick-link-card .card-text {
-            font-size: 0.95rem;
-            color: #6c757d;
-        }
-        .tournament-card {
-            border-left: 4px solid #2d5f2e;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-        .info-section {
-            background-color: #f8f9fa;
-            padding: 4rem 0;
-        }
-        .info-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .info-section .lead {
-            font-size: 1.15rem;
-            color: #6c757d;
-        }
-        section h2 {
-            font-size: 2.25rem;
-            margin-bottom: 2rem;
-        }
-        footer {
-            font-size: 0.9rem;
-        }
-        @media (max-width: 768px) {
-            .hero-section h1 {
-                font-size: 2.5rem;
-            }
-            .hero-section .lead {
-                font-size: 1.15rem;
-            }
-            .hero-section {
-                height: 60vh;
-                min-height: 400px;
-            }
-            .info-section h2 {
-                font-size: 2rem;
-            }
-            section h2 {
-                font-size: 1.75rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-        <div class="container">
-            <a class="navbar-brand" href="{{ route('home') }}">
-                <i class="fas fa-golf-ball me-2"></i>
-                Smith Center Golf Course
+@extends('layouts.app')
+
+@section('content')
+<!-- Hero Section -->
+<section class="relative bg-gray-900 h-screen min-h-[600px] flex items-center">
+    <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=80" 
+             alt="Golf Course" 
+             class="w-full h-full object-cover opacity-40">
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display text-white mb-6 leading-tight">
+            Experience Golf at<br> Smith Center
+        </h1>
+        <p class="text-xl sm:text-2xl text-gray-200 mb-12 font-light max-w-2xl mx-auto">
+            Where tradition meets excellence on every hole
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="{{ route('tee-times') }}" class="inline-flex items-center justify-center px-10 py-4 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-700 transition-all duration-300 text-lg">
+                Book Tee Time
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('home') }}">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
-                            About
+            <a href="{{ route('rates') }}" class="inline-flex items-center justify-center px-10 py-4 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 text-lg">
+                View Rates
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Section -->
+<section class="py-20 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl sm:text-5xl font-display mb-6">Why Choose Smith Center Golf Course?</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                We're not just a golf course - we're a community dedicated to providing an exceptional golfing experience
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="text-center">
+                <div class="w-20 h-20 mx-auto mb-6 bg-emerald-100 rounded-2xl flex items-center justify-center">
+                    <i class="fas fa-flag text-4xl text-emerald-600"></i>
+                </div>
+                <h3 class="text-2xl font-display mb-4">Championship Course</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Professionally designed 18-hole course with well-maintained greens and challenging fairways for all skill levels
+                </p>
+            </div>
+
+            <div class="text-center">
+                <div class="w-20 h-20 mx-auto mb-6 bg-emerald-100 rounded-2xl flex items-center justify-center">
+                    <i class="fas fa-users text-4xl text-emerald-600"></i>
+                </div>
+                <h3 class="text-2xl font-display mb-4">Expert Instruction</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Professional instructors who create personalized lesson plans and provide ongoing support for improvement
+                </p>
+            </div>
+
+            <div class="text-center">
+                <div class="w-20 h-20 mx-auto mb-6 bg-emerald-100 rounded-2xl flex items-center justify-center">
+                    <i class="fas fa-trophy text-4xl text-emerald-600"></i>
+                </div>
+                <h3 class="text-2xl font-display mb-4">Tournament Ready</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    State-of-the-art tournament hosting and scoring system with a community that celebrates every achievement
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Course Features Section -->
+<section class="py-20 sm:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl sm:text-5xl font-display mb-6">Our Course Features</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Specialized facilities designed for every aspect of your game
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                     alt="Championship Greens" 
+                     class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent flex items-end">
+                    <div class="p-8 w-full">
+                        <h3 class="text-3xl font-display text-white mb-3">Championship Greens</h3>
+                        <p class="text-gray-200 mb-4">Meticulously maintained putting surfaces that provide true roll and consistent speed throughout the season.</p>
+                        <a href="{{ route('about') }}" class="inline-flex items-center text-white hover:text-emerald-400 transition font-semibold">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ route('about') }}">About Us</a></li>
-                            <li><a class="dropdown-item" href="{{ route('facilities') }}">Facilities</a></li>
-                            <li><a class="dropdown-item" href="{{ route('contact') }}">Contact</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('rates') }}">Rates</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('tee-times') }}">Tee Times</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('tournaments.index') }}">Tournaments</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('instruction') }}">Instruction</a>
-                    </li>
-                    @auth
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
-                                <i class="fas fa-user"></i> {{ Auth::user()->name }}
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a></li>
-                                @if(Auth::user()->isAdmin())
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="{{ route('tournaments.create') }}">Create Tournament</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('courses.index') }}">Manage Courses</a></li>
-                                @endif
-                                <li><hr class="dropdown-divider"></li>
-                                <li>
-                                    <form method="POST" action="{{ route('logout') }}">
-                                        @csrf
-                                        <button type="submit" class="dropdown-item">Logout</button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">Register</a>
-                        </li>
-                    @endauth
-                </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <h1 class="fw-bold mb-4">Welcome to Smith Center Golf Course</h1>
-            <p class="lead mb-5">Experience the perfect blend of challenge and beauty</p>
-            <div class="d-flex gap-3 justify-content-center flex-wrap">
-                <a href="{{ route('tee-times') }}" class="btn btn-light btn-lg px-4">
-                    <i class="fas fa-calendar-alt me-2"></i>Book Tee Time
-                </a>
-                <a href="{{ route('rates') }}" class="btn btn-outline-light btn-lg px-4">
-                    <i class="fas fa-dollar-sign me-2"></i>View Rates
-                </a>
+            <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <img src="https://images.unsplash.com/photo-1592919505780-303950717480?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                     alt="Practice Facilities" 
+                     class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent flex items-end">
+                    <div class="p-8 w-full">
+                        <h3 class="text-3xl font-display text-white mb-3">Practice Facilities</h3>
+                        <p class="text-gray-200 mb-4">Complete practice range with target greens, putting green, and short game area to perfect every shot.</p>
+                        <a href="{{ route('facilities') }}" class="inline-flex items-center text-white hover:text-emerald-400 transition font-semibold">
+                            View Facilities <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Quick Links Section -->
-    <section class="container my-5 py-4">
-        <div class="row g-4">
-            <div class="col-md-3 col-sm-6">
-                <div class="card quick-link-card text-center p-3">
-                    <div class="card-body">
-                        <i class="fas fa-clock card-icon"></i>
-                        <h5 class="card-title">Tee Times</h5>
-                        <p class="card-text mb-3">Reserve your spot on the course</p>
-                        <a href="{{ route('tee-times') }}" class="btn btn-success">Book Now</a>
+            <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                     alt="Tournament Events" 
+                     class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent flex items-end">
+                    <div class="p-8 w-full">
+                        <h3 class="text-3xl font-display text-white mb-3">Tournament Events</h3>
+                        <p class="text-gray-200 mb-4">Host and participate in competitive tournaments with our advanced digital scoring system.</p>
+                        <a href="{{ route('tournaments.index') }}" class="inline-flex items-center text-white hover:text-emerald-400 transition font-semibold">
+                            View Events <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="card quick-link-card text-center p-3">
-                    <div class="card-body">
-                        <i class="fas fa-trophy card-icon"></i>
-                        <h5 class="card-title">Tournaments</h5>
-                        <p class="card-text mb-3">View and register for events</p>
-                        <a href="{{ route('tournaments.index') }}" class="btn btn-success">View Events</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="card quick-link-card text-center p-3">
-                    <div class="card-body">
-                        <i class="fas fa-graduation-cap card-icon"></i>
-                        <h5 class="card-title">Instruction</h5>
-                        <p class="card-text mb-3">Improve your game with lessons</p>
-                        <a href="{{ route('instruction') }}" class="btn btn-success">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="card quick-link-card text-center p-3">
-                    <div class="card-body">
-                        <i class="fas fa-info-circle card-icon"></i>
-                        <h5 class="card-title">About Us</h5>
-                        <p class="card-text mb-3">Learn about our course</p>
-                        <a href="{{ route('about') }}" class="btn btn-success">Discover</a>
+
+            <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <img src="https://images.unsplash.com/photo-1530028828-25e8270e5afd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                     alt="Golf Instruction" 
+                     class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent flex items-end">
+                    <div class="p-8 w-full">
+                        <h3 class="text-3xl font-display text-white mb-3">Golf Instruction</h3>
+                        <p class="text-gray-200 mb-4">Professional lessons and clinics for golfers of all ages and skill levels.</p>
+                        <a href="{{ route('instruction') }}" class="inline-flex items-center text-white hover:text-emerald-400 transition font-semibold">
+                            Book Lessons <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Course Info Section -->
-    <section class="info-section">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <h2 class="mb-4">A Premier Golf Experience</h2>
-                    <p class="lead mb-4">
-                        Smith Center Golf Course offers an exceptional golfing experience for players of all skill levels.
-                    </p>
-                    <ul class="list-unstyled mb-4">
-                        <li class="mb-3"><i class="fas fa-check-circle text-success me-3"></i>18-hole championship course</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success me-3"></i>Well-maintained greens and fairways</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success me-3"></i>Pro shop and practice facilities</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success me-3"></i>Professional instruction available</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success me-3"></i>Tournament hosting and scoring</li>
-                    </ul>
-                    <a href="{{ route('about') }}" class="btn btn-success btn-lg">Learn More About Us</a>
-                </div>
-                <div class="col-lg-6">
-                    <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="Golf Course" 
-                         class="img-fluid rounded shadow-lg">
-                </div>
+<!-- Stats Section -->
+<section class="py-20 bg-emerald-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="text-5xl sm:text-6xl font-display mb-2">18</div>
+                <div class="text-emerald-100 text-lg">Championship Holes</div>
+            </div>
+            <div class="text-center">
+                <div class="text-5xl sm:text-6xl font-display mb-2">1,000+</div>
+                <div class="text-emerald-100 text-lg">Active Members</div>
+            </div>
+            <div class="text-center">
+                <div class="text-5xl sm:text-6xl font-display mb-2">20+</div>
+                <div class="text-emerald-100 text-lg">Tournaments Yearly</div>
+            </div>
+            <div class="text-center">
+                <div class="text-5xl sm:text-6xl font-display mb-2">Year-Round</div>
+                <div class="text-emerald-100 text-lg">Open Daily</div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Upcoming Tournaments Section -->
-    @if($upcomingTournaments->count() > 0)
-    <section class="container my-5 py-4">
-        <h2 class="text-center mb-5">Upcoming Tournaments</h2>
-        <div class="row g-4">
+<!-- Upcoming Tournaments Section -->
+@if(isset($upcomingTournaments) && $upcomingTournaments->count() > 0)
+<section class="py-20 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl sm:text-5xl font-display mb-6">Upcoming Tournaments</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Join us for exciting competitive events throughout the season
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @foreach($upcomingTournaments as $tournament)
-            <div class="col-md-4">
-                <div class="card tournament-card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $tournament->name }}</h5>
-                        <p class="card-text">
-                            <i class="fas fa-calendar me-2"></i>{{ \Carbon\Carbon::parse($tournament->start_date)->format('F j, Y') }}<br>
-                            <i class="fas fa-map-marker-alt me-2"></i>{{ $tournament->course->name ?? 'TBD' }}<br>
-                            <i class="fas fa-users me-2"></i>{{ $tournament->format ?? 'Stroke Play' }}
-                        </p>
-                        <a href="{{ route('tournaments.show', $tournament) }}" class="btn btn-outline-success">View Details</a>
+            <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div class="h-48 bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center">
+                    <i class="fas fa-trophy text-6xl text-white opacity-80"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-display mb-4">{{ $tournament->name }}</h3>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-calendar w-6"></i>
+                            <span>{{ \Carbon\Carbon::parse($tournament->start_date)->format('F j, Y') }}</span>
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-golf-ball w-6"></i>
+                            <span>{{ $tournament->format ?? 'Stroke Play' }}</span>
+                        </div>
                     </div>
+                    <a href="{{ route('tournaments.show', $tournament) }}" class="block w-full text-center px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition font-semibold">
+                        View Details
+                    </a>
                 </div>
             </div>
             @endforeach
         </div>
-        <div class="text-center mt-4">
-            <a href="{{ route('tournaments.index') }}" class="btn btn-success">View All Tournaments</a>
-        </div>
-    </section>
-    @endif
 
-    <!-- Hours & Contact Section -->
-    <section class="bg-dark text-white py-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-4 text-center text-md-start">
-                    <h5 class="mb-3"><i class="fas fa-clock me-2"></i>Hours</h5>
-                    <p class="mb-0">
-                        <strong>Open year round</strong><br>
-                        Weather permitting<br>
-                        Dawn to Dusk
-                    </p>
-                </div>
-                <div class="col-md-4 text-center text-md-start">
-                    <h5 class="mb-3"><i class="fas fa-phone me-2"></i>Contact</h5>
-                    <p class="mb-0">
-                        Phone: (555) 123-4567<br>
-                        Email: info@smithcentergolf.com
-                    </p>
-                </div>
-                <div class="col-md-4 text-center text-md-start">
-                    <h5 class="mb-3"><i class="fas fa-map-marker-alt me-2"></i>Location</h5>
-                    <p class="mb-3">
-                        123 Golf Course Road<br>
-                        Smith Center, KS 66967
-                    </p>
-                    <a href="{{ route('contact') }}" class="btn btn-outline-light">Get Directions</a>
-                </div>
-            </div>
+        <div class="text-center mt-12">
+            <a href="{{ route('tournaments.index') }}" class="inline-flex items-center px-10 py-4 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-all duration-300">
+                View All Tournaments
+                <i class="fas fa-arrow-right ml-3"></i>
+            </a>
         </div>
-    </section>
+    </div>
+</section>
+@endif
 
-    <!-- Footer -->
-    <footer class="bg-success text-white py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="mb-0">&copy; {{ date('Y') }} Smith Center Golf Course. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-end">
-                    <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
-                    <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
-                    <a href="#" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
-                </div>
-            </div>
+<!-- CTA Section -->
+<section class="py-20 sm:py-24 bg-gray-900 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl sm:text-5xl font-display mb-6">Ready to Play?</h2>
+        <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+            Book your tee time today and experience one of Kansas' premier golf courses
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="{{ route('tee-times') }}" class="inline-flex items-center justify-center px-10 py-4 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-700 transition-all duration-300 text-lg">
+                Book Tee Time
+            </a>
+            <a href="tel:555-123-4567" class="inline-flex items-center justify-center px-10 py-4 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 text-lg">
+                Call Us: (555) 123-4567
+            </a>
         </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    </div>
+</section>
+@endsection
