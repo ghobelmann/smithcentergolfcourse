@@ -28,6 +28,8 @@ class User extends Authenticatable
         'handicap',
         'home_course',
         'is_admin',
+        'google_id',
+        'avatar',
     ];
 
     /**
