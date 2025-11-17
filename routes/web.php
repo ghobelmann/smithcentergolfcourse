@@ -95,6 +95,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Google OAuth routes
+Route::get('/auth/google', [App\Http\Controllers\Auth\GoogleAuthController::class, 'redirect'])
+    ->name('auth.google');
+Route::get('/auth/google/callback', [App\Http\Controllers\Auth\GoogleAuthController::class, 'callback'])
+    ->name('auth.google.callback');
+
 // Tournament routes (public viewing)
 Route::get('tournaments', [TournamentController::class, 'index'])->name('tournaments.index');
 
