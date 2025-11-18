@@ -25,7 +25,7 @@
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <a href="{{ route('home') }}" class="flex items-center space-x-2 text-gray-900 hover:text-emerald-600 transition">
-                        <i class="fas fa-golf-ball text-2xl text-emerald-600"></i>
+                        <img src="{{ asset('SC_Logo.png') }}" alt="Smith Center Logo" class="h-10 w-auto">
                         <span class="font-display text-xl font-bold hidden sm:block">Smith Center</span>
                         <span class="font-display text-xl font-bold sm:hidden">SC Golf</span>
                     </a>
