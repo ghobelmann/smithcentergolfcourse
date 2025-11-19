@@ -57,4 +57,35 @@ class HomeController extends Controller
     {
         return view('pages.contact');
     }
+
+    public function submitContact(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'nullable|string|max:20',
+            'subject' => 'required|string|max:255',
+            'message' => 'required|string|max:2000',
+        ]);
+
+        try {
+            // Send email notification to the course
+            \Mail::send('emails.contact-form', [
+                'name' => $validated['name'],
+                'email' => $validated['email'],
+                'phone' => $validated['phone'] ?? null,
+                'subject' => $validated['subject'],
+                'contactMessage' => $validated['message'],
+            ], function($msg) use ($validated) {
+                $msg->to('smithcentergolfcourse@gmail.com')
+                    ->subject('Contact Form: ' . $validated['subject'])
+                    ->replyTo($validated['email'], $validated['name']);
+            });
+
+            return back()->with('success', 'Thank you for contacting us! We will respond to your message shortly.');
+        } catch (\Exception $e) {
+            \Log::error('Contact form email failed: ' . $e->getMessage());
+            return back()->withInput()->with('error', 'Sorry, there was an error sending your message. Please call us at (785) 282-3812. Error: ' . $e->getMessage());
+        }
+    }
 }

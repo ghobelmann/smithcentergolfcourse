@@ -7,6 +7,7 @@ use App\Models\LeagueMember;
 use App\Models\LeagueStanding;
 use App\Models\Tournament;
 use App\Models\User;
+use App\Services\MatchPlayScoringService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
@@ -91,7 +92,7 @@ class LeagueController extends Controller
     public function show(League $league)
     {
         $league->load(['members.user', 'tournaments' => function($query) {
-            $query->orderBy('date');
+            $query->orderBy('start_date');
         }]);
 
         $currentWeek = $league->getCurrentWeek();
@@ -314,7 +315,7 @@ class LeagueController extends Controller
     }
 
     /**
-     * Calculate standings after tournament completion
+     * Calculate standings after tournament completion using match play scoring
      */
     public function calculateWeekStandings(League $league, Tournament $tournament)
     {
@@ -323,74 +324,15 @@ class LeagueController extends Controller
                 ->with('error', 'Tournament does not belong to this league.');
         }
 
-        // Get all teams and their scores
-        $teams = $tournament->teams()->with(['members.user', 'scores'])->get();
-
-        if ($teams->isEmpty()) {
-            return redirect()->back()
-                ->with('error', 'No teams found for this tournament.');
-        }
-
-        DB::beginTransaction();
         try {
-            // Calculate team positions (already done by tournament system)
-            $position = 1;
-            foreach ($teams as $team) {
-                $teamScore = $team->total_score ?? 0;
-                $teamVsPar = $team->score_vs_par ?? 0;
-
-                // Award points to each team member
-                foreach ($team->members as $member) {
-                    $points = $league->calculatePoints(
-                        $position,
-                        $teams->count(),
-                        true // participated
-                    );
-
-                    // Find or create standing record
-                    $standing = LeagueStanding::firstOrNew([
-                        'league_id' => $league->id,
-                        'user_id' => $member->user_id,
-                        'week_number' => $tournament->week_number,
-                    ]);
-
-                    // Update weekly stats
-                    $standing->tournament_id = $tournament->id;
-                    $standing->position = $position;
-                    $standing->flight = $team->flight;
-                    $standing->position_in_flight = $team->position_in_flight ?? null;
-                    $standing->total_score = $teamScore;
-                    $standing->score_vs_par = $teamVsPar;
-                    $standing->points_earned = $points;
-                    $standing->participated = true;
-
-                    // Update cumulative stats
-                    $previousStandings = LeagueStanding::where('league_id', $league->id)
-                        ->where('user_id', $member->user_id)
-                        ->where('id', '!=', $standing->id ?? 0)
-                        ->get();
-
-                    $standing->total_points = $previousStandings->sum('points_earned') + $points;
-                    $standing->weeks_played = $previousStandings->where('participated', true)->count() + 1;
-
-                    $allScores = $previousStandings->where('participated', true)->pluck('total_score')->push($teamScore);
-                    $standing->best_score = $allScores->min();
-                    $standing->worst_score = $allScores->max();
-                    $standing->average_score = $allScores->average();
-
-                    $standing->save();
-                }
-
-                $position++;
-            }
-
-            DB::commit();
+            // Use the match play scoring service for four-ball best ball
+            $scoringService = new MatchPlayScoringService();
+            $scoringService->calculateWeeklyStandings($tournament, $league);
 
             return redirect()->route('leagues.weekly', [$league, $tournament->week_number])
-                ->with('success', 'Week ' . $tournament->week_number . ' standings calculated successfully!');
+                ->with('success', 'Week ' . $tournament->week_number . ' standings calculated using match play scoring! Each hole won = 1 point.');
 
         } catch (\Exception $e) {
-            DB::rollBack();
             return redirect()->back()
                 ->with('error', 'Error calculating standings: ' . $e->getMessage());
         }
@@ -426,12 +368,12 @@ class LeagueController extends Controller
             while ($current->lte($end)) {
                 Tournament::create([
                     'name' => $league->name . ' - Week ' . $weekNumber,
-                    'date' => $current->toDateString(),
-                    'tee_time' => $league->tee_time,
+                    'start_date' => $current->toDateString(),
+                    'end_date' => $current->toDateString(),
                     'format' => 'scramble', // 2-man best ball format
                     'holes' => $league->holes,
                     'entry_fee' => $league->entry_fee_per_week,
-                    'max_teams' => $league->max_members ? intval($league->max_members / 2) : null,
+                    'max_participants' => $league->max_members ? intval($league->max_members / 2) : null,
                     'number_of_flights' => $league->number_of_flights ?? 1,
                     'status' => 'upcoming',
                     'league_id' => $league->id,
@@ -466,7 +408,7 @@ class LeagueController extends Controller
             ->join('tournaments', 'teams.tournament_id', '=', 'tournaments.id')
             ->where('tournaments.league_id', $league->id)
             ->where('team_members.user_id', $user->id)
-            ->orderBy('tournaments.date', 'desc')
+            ->orderBy('tournaments.start_date', 'desc')
             ->first();
 
         if (!$recentTeam) {

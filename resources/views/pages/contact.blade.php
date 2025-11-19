@@ -22,25 +22,39 @@
             <!-- Contact Form -->
             <div>
                 <h2 class="text-3xl font-display mb-6">Send Us a Message</h2>
-                <form action="#" method="POST" class="space-y-6">
+                
+                @if(session('success'))
+                    <div class="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+                        <i class="fas fa-check-circle mr-2"></i>{{ session('success') }}
+                    </div>
+                @endif
+
+                @if(session('error'))
+                    <div class="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+                        <i class="fas fa-exclamation-circle mr-2"></i>{{ session('error') }}
+                    </div>
+                @endif
+
+                @if($errors->any())
+                    <div class="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+                        <ul class="list-disc list-inside">
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                <form action="{{ route('contact.submit') }}" method="POST" class="space-y-6">
                     @csrf
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="first_name" class="block text-sm font-semibold text-gray-700 mb-2">First Name</label>
-                            <input type="text" 
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent" 
-                                   id="first_name" 
-                                   name="first_name" 
-                                   required>
-                        </div>
-                        <div>
-                            <label for="last_name" class="block text-sm font-semibold text-gray-700 mb-2">Last Name</label>
-                            <input type="text" 
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent" 
-                                   id="last_name" 
-                                   name="last_name" 
-                                   required>
-                        </div>
+                    <div>
+                        <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Name</label>
+                        <input type="text" 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent" 
+                               id="name" 
+                               name="name"
+                               value="{{ old('name') }}" 
+                               required>
                     </div>
 
                     <div>
@@ -48,16 +62,18 @@
                         <input type="email" 
                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent" 
                                id="email" 
-                               name="email" 
+                               name="email"
+                               value="{{ old('email') }}" 
                                required>
                     </div>
 
                     <div>
-                        <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">Phone</label>
+                        <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">Phone (Optional)</label>
                         <input type="tel" 
                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent" 
                                id="phone" 
-                               name="phone">
+                               name="phone"
+                               value="{{ old('phone') }}">
                     </div>
 
                     <div>
@@ -67,10 +83,12 @@
                                 name="subject" 
                                 required>
                             <option value="">Select a subject</option>
-                            <option value="general">General Inquiry</option>
-                            <option value="instruction">Golf Instruction</option>
-                            <option value="tournament">Tournament</option>
-                            <option value="other">Other</option>
+                            <option value="General Inquiry" {{ old('subject') == 'General Inquiry' ? 'selected' : '' }}>General Inquiry</option>
+                            <option value="Golf Instruction" {{ old('subject') == 'Golf Instruction' ? 'selected' : '' }}>Golf Instruction</option>
+                            <option value="Tournament Information" {{ old('subject') == 'Tournament Information' ? 'selected' : '' }}>Tournament Information</option>
+                            <option value="League Information" {{ old('subject') == 'League Information' ? 'selected' : '' }}>League Information</option>
+                            <option value="Membership" {{ old('subject') == 'Membership' ? 'selected' : '' }}>Membership</option>
+                            <option value="Other" {{ old('subject') == 'Other' ? 'selected' : '' }}>Other</option>
                         </select>
                     </div>
 
@@ -80,7 +98,7 @@
                                   id="message" 
                                   name="message" 
                                   rows="6" 
-                                  required></textarea>
+                                  required>{{ old('message') }}</textarea>
                     </div>
 
                     <button type="submit" class="w-full px-8 py-4 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-700 transition text-lg">
@@ -101,7 +119,7 @@
                                 Check out our membership and payment options included on the <a href="{{ route('rates') }}" class="underline hover:text-white font-semibold">Rates page</a>.
                             </p>
                             <p class="text-emerald-100 text-sm">
-                                If you are unable to view the membership options and tournament schedules, please contact the city offices at <a href="tel:785-282-3249" class="underline hover:text-white font-semibold">785-282-3249</a>.
+                                If you are unable to view the membership options and tournament schedules, please contact the city offices at <a href="tel:785-282-3812" class="underline hover:text-white font-semibold">(785) 282-3812</a>.
                             </p>
                         </div>
                     </div>
@@ -112,7 +130,7 @@
                         <i class="fas fa-map-marker-alt text-3xl text-emerald-600 mr-4"></i>
                         <div>
                             <h3 class="text-xl font-display mb-2">Address</h3>
-                            <p class="text-gray-600">123 Golf Course Road</p>
+                            <p class="text-gray-600">20082 US-281</p>
                             <p class="text-gray-600">Smith Center, KS 66967</p>
                         </div>
                     </div>
@@ -123,7 +141,7 @@
                         <i class="fas fa-phone text-3xl text-emerald-600 mr-4"></i>
                         <div>
                             <h3 class="text-xl font-display mb-2">Phone</h3>
-                            <p class="text-gray-600">City Offices: <a href="tel:785-282-3249" class="text-emerald-600 hover:text-emerald-700 font-semibold">785-282-3249</a></p>
+                            <p class="text-gray-600">City Offices: <a href="tel:785-282-3812" class="text-emerald-600 hover:text-emerald-700 font-semibold">(785) 282-3812</a></p>
                         </div>
                     </div>
                 </div>
@@ -133,7 +151,7 @@
                         <i class="fas fa-envelope text-3xl text-emerald-600 mr-4"></i>
                         <div>
                             <h3 class="text-xl font-display mb-2">Email</h3>
-                            <p class="text-gray-600">info@smithcentergolf.com</p>
+                            <p class="text-gray-600"><a href="mailto:smithcentergolfcourse@gmail.com" class="text-emerald-600 hover:text-emerald-700">smithcentergolfcourse@gmail.com</a></p>
                         </div>
                     </div>
                 </div>
@@ -143,10 +161,7 @@
                         <i class="fas fa-clock text-3xl text-emerald-600 mr-4"></i>
                         <div>
                             <h3 class="text-xl font-display mb-2">Hours</h3>
-                            <p class="text-gray-600 mb-2"><strong>Spring-Fall:</strong></p>
-                            <p class="text-gray-600 mb-3">7:00 AM - 6:00 PM Daily</p>
-                            <p class="text-gray-600 mb-2"><strong>Winter:</strong></p>
-                            <p class="text-gray-600">8:00 AM - 5:00 PM Daily</p>
+                            <p class="text-gray-600">Sunrise to Sunset</p>
                             <p class="text-sm text-gray-500 mt-2">(Weather permitting)</p>
                         </div>
                     </div>

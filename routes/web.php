@@ -18,6 +18,7 @@ Route::get('/leagues', [HomeController::class, 'leagues'])->name('leagues');
 Route::get('/instruction', [HomeController::class, 'instruction'])->name('instruction');
 Route::get('/store', [HomeController::class, 'store'])->name('store');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::post('/contact', [HomeController::class, 'submitContact'])->name('contact.submit');
 
 // Debug route to check auth status
 Route::get('/debug-auth', function () {

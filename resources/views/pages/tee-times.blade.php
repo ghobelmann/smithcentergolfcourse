@@ -94,17 +94,15 @@
             <div class="space-y-6">
                 <div class="bg-emerald-600 text-white rounded-2xl shadow-lg p-6">
                     <h3 class="text-xl font-display mb-4">Call to Book</h3>
-                    <p class="text-3xl font-bold text-center">(555) 123-4567</p>
+                    <p class="text-3xl font-bold text-center">(785) 282-3812</p>
                 </div>
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
                     <div class="bg-blue-600 text-white p-4">
                         <h3 class="text-xl font-display">Hours</h3>
                     </div>
                     <div class="p-6 text-gray-600">
-                        <p class="font-semibold mb-2">Spring/Summer/Fall:</p>
-                        <p class="mb-4">7:00 AM - 5:00 PM</p>
-                        <p class="font-semibold mb-2">Winter:</p>
-                        <p>8:00 AM - 4:00 PM</p>
+                        <p class="text-lg">Sunrise to Sunset</p>
+                        <p class="text-sm text-gray-500 mt-2">(Weather permitting)</p>
                     </div>
                 </div>
             </div>

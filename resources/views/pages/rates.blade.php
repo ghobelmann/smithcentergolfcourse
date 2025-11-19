@@ -146,27 +146,6 @@
 
 <!-- Group Rates Section -->
 <section class="py-20 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
-            <div class="flex items-start mb-6">
-                <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mr-6 flex-shrink-0">
-                    <i class="fas fa-users text-3xl text-emerald-600"></i>
-                </div>
-                <div>
-                    <h2 class="text-3xl font-display mb-4">Group & Tournament Rates</h2>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        We offer special rates for groups of 12 or more and tournament hosting. 
-                        Our facility can accommodate tournaments of various sizes with our comprehensive scoring system.
-                    </p>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Contact us for custom pricing and availability for your group or tournament needs.
-                    </p>
-                    <a href="{{ route('contact') }}" class="inline-flex items-center px-8 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-700 transition">
-                        Contact for Group Rates
-                    </a>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 

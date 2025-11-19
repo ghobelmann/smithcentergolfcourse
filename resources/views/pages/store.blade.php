@@ -28,7 +28,7 @@
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">Visit Our Pro Shop</h3>
                     <p class="text-gray-700">
                         All merchandise is available for purchase at the course. Contact us at 
-                        <a href="tel:785-282-3249" class="text-emerald-600 hover:text-emerald-700 font-semibold">785-282-3249</a> 
+                        <a href="tel:785-282-3812" class="text-emerald-600 hover:text-emerald-700 font-semibold">(785) 282-3812</a> 
                         for availability and ordering.
                     </p>
                 </div>
@@ -329,7 +329,7 @@
                 <div class="text-center p-6 bg-white rounded-xl shadow">
                     <i class="fas fa-phone text-4xl text-emerald-600 mb-4"></i>
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">Call to Order</h3>
-                    <p class="text-gray-600">Call us at <a href="tel:785-282-3249" class="text-emerald-600 font-semibold">785-282-3249</a> to order</p>
+                    <p class="text-gray-600">Call us at <a href="tel:785-282-3812" class="text-emerald-600 font-semibold">(785) 282-3812</a> to order</p>
                 </div>
                 
                 <div class="text-center p-6 bg-white rounded-xl shadow">
