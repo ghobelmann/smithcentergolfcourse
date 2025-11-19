@@ -38,9 +38,19 @@ class HomeController extends Controller
         return view('pages.tee-times');
     }
 
+    public function leagues()
+    {
+        return view('pages.leagues');
+    }
+
     public function instruction()
     {
         return view('pages.instruction');
+    }
+
+    public function store()
+    {
+        return view('pages.store');
     }
 
     public function contact()

@@ -4,9 +4,9 @@
 <!-- Hero Section -->
 <section class="relative bg-gray-900 py-20">
     <div class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=80" 
+        <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&q=80&w=2000" 
              alt="Contact Us" 
-             class="w-full h-full object-cover opacity-30">
+             class="w-full h-full object-cover opacity-40">
     </div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-5xl sm:text-6xl font-display text-white mb-6">Contact Us</h1>
@@ -68,7 +68,6 @@
                                 required>
                             <option value="">Select a subject</option>
                             <option value="general">General Inquiry</option>
-                            <option value="tee-time">Tee Time</option>
                             <option value="instruction">Golf Instruction</option>
                             <option value="tournament">Tournament</option>
                             <option value="other">Other</option>
@@ -92,13 +91,29 @@
 
             <!-- Contact Info -->
             <div class="space-y-6">
+                <!-- Membership Info -->
                 <div class="bg-emerald-600 text-white rounded-2xl shadow-lg p-8">
                     <div class="flex items-start mb-4">
-                        <i class="fas fa-map-marker-alt text-3xl mr-4"></i>
+                        <i class="fas fa-info-circle text-3xl mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-display mb-3">Interested in Becoming a Member?</h3>
+                            <p class="text-emerald-100 mb-4">
+                                Check out our membership and payment options included on the <a href="{{ route('rates') }}" class="underline hover:text-white font-semibold">Rates page</a>.
+                            </p>
+                            <p class="text-emerald-100 text-sm">
+                                If you are unable to view the membership options and tournament schedules, please contact the city offices at <a href="tel:785-282-3249" class="underline hover:text-white font-semibold">785-282-3249</a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-8">
+                    <div class="flex items-start mb-4">
+                        <i class="fas fa-map-marker-alt text-3xl text-emerald-600 mr-4"></i>
                         <div>
                             <h3 class="text-xl font-display mb-2">Address</h3>
-                            <p class="text-emerald-100">123 Golf Course Road</p>
-                            <p class="text-emerald-100">Smith Center, KS 66967</p>
+                            <p class="text-gray-600">123 Golf Course Road</p>
+                            <p class="text-gray-600">Smith Center, KS 66967</p>
                         </div>
                     </div>
                 </div>
@@ -108,7 +123,7 @@
                         <i class="fas fa-phone text-3xl text-emerald-600 mr-4"></i>
                         <div>
                             <h3 class="text-xl font-display mb-2">Phone</h3>
-                            <p class="text-gray-600">(555) 123-4567</p>
+                            <p class="text-gray-600">City Offices: <a href="tel:785-282-3249" class="text-emerald-600 hover:text-emerald-700 font-semibold">785-282-3249</a></p>
                         </div>
                     </div>
                 </div>

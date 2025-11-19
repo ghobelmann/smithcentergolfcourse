@@ -122,8 +122,8 @@
             Join us for an unforgettable round of golf
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="{{ route('tee-times') }}" class="inline-flex items-center justify-center px-10 py-4 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-700 transition-all duration-300 text-lg">
-                Book a Tee Time
+            <a href="{{ route('tournaments.index') }}" class="inline-flex items-center justify-center px-10 py-4 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-700 transition-all duration-300 text-lg">
+                View Tournaments
             </a>
             <a href="{{ route('contact') }}" class="inline-flex items-center justify-center px-10 py-4 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 text-lg">
                 Contact Us

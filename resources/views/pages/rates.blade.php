@@ -4,9 +4,9 @@
 <!-- Hero Section -->
 <section class="relative bg-gray-900 py-20">
     <div class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1592919505780-303950717480?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=80" 
+        <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&q=80&w=2000" 
              alt="Golf Course" 
-             class="w-full h-full object-cover opacity-30">
+             class="w-full h-full object-cover opacity-40">
     </div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-5xl sm:text-6xl font-display text-white mb-6">Rates & Fees</h1>
@@ -38,48 +38,32 @@
                 <div class="p-6">
                     <div class="space-y-4">
                         <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="text-gray-700">18 Holes with Cart</span>
-                            <span class="text-2xl font-bold text-emerald-600">$40</span>
-                        </div>
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="text-gray-700">18 Holes Walking</span>
-                            <span class="text-2xl font-bold text-emerald-600">$25</span>
-                        </div>
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="text-gray-700">9 Holes with Cart</span>
-                            <span class="text-2xl font-bold text-emerald-600">$25</span>
+                            <span class="text-gray-700">18 Holes</span>
+                            <span class="text-2xl font-bold text-emerald-600">$20</span>
                         </div>
                         <div class="flex justify-between items-center py-3">
-                            <span class="text-gray-700">9 Holes Walking</span>
-                            <span class="text-2xl font-bold text-emerald-600">$15</span>
+                            <span class="text-gray-700">9 Holes</span>
+                            <span class="text-2xl font-bold text-emerald-600">$10</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Weekend Rates -->
+            <!-- Weekend & Holiday Rates -->
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
                 <div class="bg-yellow-500 text-gray-900 p-6">
                     <h3 class="text-2xl font-display flex items-center">
-                        <i class="fas fa-calendar-week mr-3"></i>Weekend Rates
+                        <i class="fas fa-calendar-week mr-3"></i>Weekend & Holiday Rates
                     </h3>
                 </div>
                 <div class="p-6">
                     <div class="space-y-4">
                         <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="text-gray-700">18 Holes with Cart</span>
-                            <span class="text-2xl font-bold text-yellow-600">$50</span>
-                        </div>
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="text-gray-700">18 Holes Walking</span>
-                            <span class="text-2xl font-bold text-yellow-600">$35</span>
-                        </div>
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="text-gray-700">9 Holes with Cart</span>
+                            <span class="text-gray-700">18 Holes</span>
                             <span class="text-2xl font-bold text-yellow-600">$30</span>
                         </div>
                         <div class="flex justify-between items-center py-3">
-                            <span class="text-gray-700">9 Holes Walking</span>
+                            <span class="text-gray-700">9 Holes</span>
                             <span class="text-2xl font-bold text-yellow-600">$20</span>
                         </div>
                     </div>
@@ -88,68 +72,72 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            <!-- Season Passes -->
+            <!-- Season Memberships -->
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
                 <div class="bg-blue-600 text-white p-6">
                     <h3 class="text-2xl font-display flex items-center">
-                        <i class="fas fa-id-card mr-3"></i>Season Passes
+                        <i class="fas fa-id-card mr-3"></i>Season Memberships
                     </h3>
                 </div>
                 <div class="p-6">
                     <div class="space-y-4 mb-4">
                         <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="text-gray-700">Individual Annual Pass</span>
-                            <span class="text-2xl font-bold text-blue-600">$800</span>
+                            <span class="text-gray-700">Individual First Time Membership</span>
+                            <span class="text-2xl font-bold text-blue-600">$150</span>
                         </div>
                         <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="text-gray-700">Senior Annual Pass (62+)</span>
-                            <span class="text-2xl font-bold text-blue-600">$650</span>
-                        </div>
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="text-gray-700">Junior Annual Pass (Under 18)</span>
+                            <span class="text-gray-700">Individual Membership</span>
                             <span class="text-2xl font-bold text-blue-600">$400</span>
                         </div>
+                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                            <span class="text-gray-700">Student Membership <span class="text-sm text-gray-500">(up to and including age 23)</span></span>
+                            <span class="text-2xl font-bold text-blue-600">$150</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                            <span class="text-gray-700">Family First Time Membership</span>
+                            <span class="text-2xl font-bold text-blue-600">$200</span>
+                        </div>
                         <div class="flex justify-between items-center py-3">
-                            <span class="text-gray-700">Family Annual Pass</span>
-                            <span class="text-2xl font-bold text-blue-600">$1,500</span>
+                            <span class="text-gray-700">Family Membership</span>
+                            <span class="text-2xl font-bold text-blue-600">$475</span>
                         </div>
                     </div>
-                    <p class="text-sm text-gray-500 bg-gray-50 p-4 rounded-lg">
-                        Season passes include unlimited golf and cart usage for the entire season (April - October)
-                    </p>
+                    <div class="text-sm text-gray-500 bg-blue-50 p-4 rounded-lg space-y-2">
+                        <p class="font-semibold text-blue-900">Payment Plan Available:</p>
+                        <p>Pay in installments: $50 by March 15th, $50 by May 15th, $50 by July 15th (for $150 memberships). Other amounts vary by membership type.</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Additional Services -->
+            <!-- Cart & Range Services -->
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
                 <div class="bg-gray-600 text-white p-6">
                     <h3 class="text-2xl font-display flex items-center">
-                        <i class="fas fa-golf-ball mr-3"></i>Additional Services
+                        <i class="fas fa-golf-ball mr-3"></i>Cart & Range Services
                     </h3>
                 </div>
                 <div class="p-6">
                     <div class="space-y-4">
                         <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="text-gray-700">Cart Rental (9 holes)</span>
-                            <span class="text-2xl font-bold text-gray-600">$10</span>
-                        </div>
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="text-gray-700">Cart Rental (18 holes)</span>
-                            <span class="text-2xl font-bold text-gray-600">$15</span>
-                        </div>
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="text-gray-700">Club Rental</span>
+                            <span class="text-gray-700">Rental Cart (per round)</span>
                             <span class="text-2xl font-bold text-gray-600">$20</span>
                         </div>
                         <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="text-gray-700">Range Balls (small bucket)</span>
-                            <span class="text-2xl font-bold text-gray-600">$5</span>
+                            <span class="text-gray-700">Unlimited Annual Cart Rental</span>
+                            <span class="text-2xl font-bold text-gray-600">$450</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                            <span class="text-gray-700">Cart Shed Rental</span>
+                            <span class="text-2xl font-bold text-gray-600">$140</span>
                         </div>
                         <div class="flex justify-between items-center py-3">
-                            <span class="text-gray-700">Range Balls (large bucket)</span>
-                            <span class="text-2xl font-bold text-gray-600">$8</span>
+                            <span class="text-gray-700">Range Ball Member</span>
+                            <span class="text-2xl font-bold text-gray-600">$50</span>
                         </div>
                     </div>
+                    <p class="text-sm text-gray-500 bg-gray-50 p-4 rounded-lg mt-4">
+                        Discount ticket books are available for purchase at the City Office. Ticket books are $100 for 10 tickets. Each ticket can be used for daily greens fees or cart rental.
+                    </p>
                 </div>
             </div>
         </div>
@@ -187,10 +175,10 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-4xl font-display mb-6">Ready to Play?</h2>
         <p class="text-xl text-gray-300 mb-10">
-            Book your tee time today and experience our course
+            Visit us today and experience our course
         </p>
-        <a href="{{ route('tee-times') }}" class="inline-flex items-center justify-center px-10 py-4 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-700 transition-all duration-300 text-lg">
-            <i class="fas fa-calendar-check mr-3"></i>Book Your Tee Time
+        <a href="{{ route('contact') }}" class="inline-flex items-center justify-center px-10 py-4 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-700 transition-all duration-300 text-lg">
+            <i class="fas fa-phone mr-3"></i>Contact Us
         </a>
     </div>
 </section>

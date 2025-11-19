@@ -16,11 +16,11 @@
             Where tradition meets excellence on every hole
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="{{ route('tee-times') }}" class="inline-flex items-center justify-center px-10 py-4 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-700 transition-all duration-300 text-lg">
-                Book Tee Time
-            </a>
-            <a href="{{ route('rates') }}" class="inline-flex items-center justify-center px-10 py-4 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 text-lg">
+            <a href="{{ route('rates') }}" class="inline-flex items-center justify-center px-10 py-4 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-700 transition-all duration-300 text-lg">
                 View Rates
+            </a>
+            <a href="{{ route('tournaments.index') }}" class="inline-flex items-center justify-center px-10 py-4 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 text-lg">
+                Tournaments
             </a>
         </div>
     </div>
@@ -220,11 +220,11 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-4xl sm:text-5xl font-display mb-6">Ready to Play?</h2>
         <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-            Book your tee time today and experience one of Kansas' premier golf courses
+            Visit us today and experience one of Kansas' premier golf courses
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="{{ route('tee-times') }}" class="inline-flex items-center justify-center px-10 py-4 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-700 transition-all duration-300 text-lg">
-                Book Tee Time
+            <a href="{{ route('tournaments.index') }}" class="inline-flex items-center justify-center px-10 py-4 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-700 transition-all duration-300 text-lg">
+                View Tournaments
             </a>
             <a href="tel:555-123-4567" class="inline-flex items-center justify-center px-10 py-4 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 text-lg">
                 Call Us: (555) 123-4567
