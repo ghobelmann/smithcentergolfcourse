@@ -77,8 +77,8 @@
                 <!-- Polo Shirt -->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition group">
                     <div class="relative bg-gray-100 h-80 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1628016876762-e8e6bc551234?auto=format&fit=crop&q=80&w=800" 
-                             alt="Golf Polo" 
+                        <img src="{{ asset('sc_polo.png') }}" 
+                             alt="Smith Center Golf Polo" 
                              class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                             <img src="{{ asset('logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">

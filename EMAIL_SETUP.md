@@ -6,33 +6,14 @@ To enable email functionality for the Smith Center Golf Course website, follow t
 
 ### 1. Generate Gmail App Password
 
-**Important**: App Passwords only appear if you have 2-Step Verification enabled.
-
-#### Method 1: Direct Link
-1. Go directly to: https://myaccount.google.com/apppasswords
-2. You may be asked to sign in again
-3. In the "App name" field, type: "Smith Center Golf Course Website"
-4. Click "Create"
-5. Google will display a 16-character password (example: "abcd efgh ijkl mnop")
-6. Copy this password (you can remove the spaces when pasting into .env)
-7. Click "Done"
-
-#### Method 2: Through Security Settings
 1. Go to your Google Account: https://myaccount.google.com/
 2. Click on "Security" in the left sidebar
-3. Verify that "2-Step Verification" shows as "On"
-4. Scroll down on the Security page
-5. Look for "App passwords" (it appears below 2-Step Verification)
-6. Click "App passwords" 
-7. In the "App name" field, type: "Smith Center Golf Course Website"
-8. Click "Create"
-9. Copy the 16-character password
-10. Click "Done"
-
-**Note**: If you don't see "App passwords" option, it might be because:
-- 2-Step Verification was just enabled (wait a few minutes and refresh)
-- You're using a Google Workspace account with different settings
-- Try the direct link (Method 1) instead
+3. Enable 2-Step Verification if not already enabled
+4. Under "2-Step Verification", scroll down and click on "App passwords"
+5. Select "Mail" and "Other (Custom name)"
+6. Enter "Smith Center Golf Course Website"
+7. Click "Generate"
+8. Copy the 16-character password (no spaces)
 
 ### 2. Update .env File
 
