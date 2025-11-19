@@ -80,6 +80,23 @@ class User extends Authenticatable
                     ->withTimestamps();
     }
 
+    public function leagueMemberships(): HasMany
+    {
+        return $this->hasMany(LeagueMember::class);
+    }
+
+    public function leagues(): BelongsToMany
+    {
+        return $this->belongsToMany(League::class, 'league_members')
+                    ->withPivot(['handicap', 'season_fee_paid', 'is_active', 'joined_date', 'weeks_played'])
+                    ->withTimestamps();
+    }
+
+    public function leagueStandings(): HasMany
+    {
+        return $this->hasMany(LeagueStanding::class);
+    }
+
     // User scores are accessed through tournament entries
     // Use: $user->tournamentEntries()->with('scores') to get scores
 

@@ -12,6 +12,9 @@ class Tournament extends Model
     use HasFactory;
 
     protected $fillable = [
+        'league_id',
+        'week_number',
+        'counts_for_championship',
         'name',
         'description',
         'start_date',
@@ -61,7 +64,25 @@ class Tournament extends Model
         return $this->belongsTo(CourseTee::class);
     }
 
+    public function league(): BelongsTo
+    {
+        return $this->belongsTo(League::class);
+    }
+
     // Helper methods
+    
+    public function isLeagueTournament(): bool
+    {
+        return $this->league_id !== null;
+    }
+
+    public function getWeekLabel(): string
+    {
+        if ($this->isLeagueTournament() && $this->week_number) {
+            return "Week {$this->week_number}";
+        }
+        return '';
+    }
     public function isUpcoming(): bool
     {
         return $this->status === 'upcoming';
