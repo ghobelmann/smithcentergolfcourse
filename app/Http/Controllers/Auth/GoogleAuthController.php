@@ -25,6 +25,13 @@ class GoogleAuthController extends Controller
     public function callback()
     {
         try {
+            // Check if Google returned an error
+            if (request()->has('error')) {
+                \Log::error('Google OAuth returned error: ' . request('error'));
+                \Log::error('Error description: ' . request('error_description', 'No description'));
+                return redirect('/login')->with('error', 'Unable to login with Google: ' . request('error_description', request('error')));
+            }
+
             $googleUser = Socialite::driver('google')->user();
             
             // Find or create user
@@ -58,7 +65,9 @@ class GoogleAuthController extends Controller
             return redirect()->intended(route('home'))->with('success', 'Welcome back, ' . $user->name . '!');
             
         } catch (\Exception $e) {
-            return redirect('/login')->with('error', 'Unable to login with Google. Please try again.');
+            \Log::error('Google OAuth Error: ' . $e->getMessage());
+            \Log::error('Stack trace: ' . $e->getTraceAsString());
+            return redirect('/login')->with('error', 'Unable to login with Google. Please try again. Error: ' . $e->getMessage());
         }
     }
 }
