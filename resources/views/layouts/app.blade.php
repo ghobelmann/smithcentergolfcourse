@@ -62,6 +62,12 @@
                     </a>
 
                     @auth
+                        @if(Auth::user()->is_admin)
+                            <a href="{{ route('admin.dashboard') }}" class="text-sm font-semibold text-purple-600 hover:text-purple-700 transition flex items-center">
+                                <i class="fas fa-user-shield mr-1"></i>Admin
+                            </a>
+                        @endif
+                        
                         <!-- User Dropdown -->
                         <div class="relative" x-data="{ open: false }" @click.away="open = false">
                             <button @click="open = !open" class="text-sm font-semibold text-gray-700 hover:text-emerald-600 transition flex items-center">
@@ -70,10 +76,13 @@
                             <div x-show="open" x-transition class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                                 <div class="py-1">
                                     <a href="{{ route('profile.edit') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Profile</a>
-                                    @if(Auth::user()->isAdmin())
+                                    @if(Auth::user()->is_admin)
                                         <div class="border-t border-gray-100"></div>
-                                        <a href="{{ route('tournaments.create') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Create Tournament</a>
-                                        <a href="{{ route('leagues.index') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Manage Leagues</a>
+                                        <a href="{{ route('admin.dashboard') }}" class="block px-4 py-2 text-sm text-purple-600 hover:bg-purple-50 font-semibold">
+                                            <i class="fas fa-user-shield mr-2"></i>Admin Dashboard
+                                        </a>
+                                        <a href="{{ route('admin.tournaments.create') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Create Tournament</a>
+                                        <a href="{{ route('admin.leagues.index') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Manage Leagues</a>
                                         <a href="{{ route('courses.index') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Manage Courses</a>
                                     @endif
                                     <div class="border-t border-gray-100"></div>
