@@ -44,11 +44,13 @@
                 
                 <!-- Hoodie -->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition group">
-                    <div class="relative bg-gray-100 h-80 flex items-center justify-center overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-600 to-emerald-800 opacity-90"></div>
-                        <div class="relative z-10 text-center p-8">
-                            <img src="{{ asset('SC_Logo.png') }}" alt="Smith Center Logo" class="w-32 h-32 mx-auto mb-4 filter brightness-0 invert">
-                            <i class="fas fa-tshirt text-6xl text-white opacity-50"></i>
+                    <div class="relative bg-gray-100 h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&q=80&w=800" 
+                             alt="Golf Hoodie" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <img src="{{ asset('SC_Logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
+                            SC Golf
                         </div>
                     </div>
                     <div class="p-6">
@@ -74,11 +76,13 @@
 
                 <!-- Polo Shirt -->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition group">
-                    <div class="relative bg-gray-100 h-80 flex items-center justify-center overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 opacity-90"></div>
-                        <div class="relative z-10 text-center p-8">
-                            <img src="{{ asset('SC_Logo.png') }}" alt="Smith Center Logo" class="w-32 h-32 mx-auto mb-4 filter brightness-0 invert">
-                            <i class="fas fa-user-tie text-6xl text-white opacity-50"></i>
+                    <div class="relative bg-gray-100 h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1628016876762-e8e6bc551234?auto=format&fit=crop&q=80&w=800" 
+                             alt="Golf Polo" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <img src="{{ asset('SC_Logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
+                            SC Golf
                         </div>
                     </div>
                     <div class="p-6">
@@ -104,11 +108,13 @@
 
                 <!-- T-Shirt -->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition group">
-                    <div class="relative bg-gray-100 h-80 flex items-center justify-center overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900 opacity-90"></div>
-                        <div class="relative z-10 text-center p-8">
-                            <img src="{{ asset('SC_Logo.png') }}" alt="Smith Center Logo" class="w-32 h-32 mx-auto mb-4 filter brightness-0 invert">
-                            <i class="fas fa-shirt text-6xl text-white opacity-50"></i>
+                    <div class="relative bg-gray-100 h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80&w=800" 
+                             alt="Golf T-Shirt" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <img src="{{ asset('SC_Logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
+                            SC Golf
                         </div>
                     </div>
                     <div class="p-6">
@@ -134,10 +140,13 @@
 
                 <!-- Baseball Cap -->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition group">
-                    <div class="relative bg-gray-100 h-80 flex items-center justify-center overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-700 to-emerald-900 opacity-90"></div>
-                        <div class="relative z-10 text-center p-8">
-                            <img src="{{ asset('SC_Logo.png') }}" alt="Smith Center Logo" class="w-40 h-40 mx-auto mb-4 filter brightness-0 invert">
+                    <div class="relative bg-gray-100 h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&q=80&w=800" 
+                             alt="Golf Cap" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <img src="{{ asset('SC_Logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
+                            SC Golf
                         </div>
                     </div>
                     <div class="p-6">
@@ -159,10 +168,13 @@
 
                 <!-- Visor -->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition group">
-                    <div class="relative bg-gray-100 h-80 flex items-center justify-center overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-blue-700 to-blue-900 opacity-90"></div>
-                        <div class="relative z-10 text-center p-8">
-                            <img src="{{ asset('SC_Logo.png') }}" alt="Smith Center Logo" class="w-40 h-40 mx-auto mb-4 filter brightness-0 invert">
+                    <div class="relative bg-gray-100 h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?auto=format&fit=crop&q=80&w=800" 
+                             alt="Golf Visor" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <img src="{{ asset('SC_Logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
+                            SC Golf
                         </div>
                     </div>
                     <div class="p-6">
@@ -184,11 +196,13 @@
 
                 <!-- Golf Towel -->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition group">
-                    <div class="relative bg-gray-100 h-80 flex items-center justify-center overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-gray-600 to-gray-800 opacity-90"></div>
-                        <div class="relative z-10 text-center p-8">
-                            <img src="{{ asset('SC_Logo.png') }}" alt="Smith Center Logo" class="w-32 h-32 mx-auto mb-4 filter brightness-0 invert">
-                            <i class="fas fa-wind text-6xl text-white opacity-50"></i>
+                    <div class="relative bg-gray-100 h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&q=80&w=800" 
+                             alt="Golf Towel" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <img src="{{ asset('SC_Logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
+                            SC Golf
                         </div>
                     </div>
                     <div class="p-6">
@@ -210,11 +224,13 @@
 
                 <!-- Driver Head Cover -->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition group">
-                    <div class="relative bg-gray-100 h-80 flex items-center justify-center overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-600 to-emerald-800 opacity-90"></div>
-                        <div class="relative z-10 text-center p-8">
-                            <img src="{{ asset('SC_Logo.png') }}" alt="Smith Center Logo" class="w-32 h-32 mx-auto mb-4 filter brightness-0 invert">
-                            <i class="fas fa-golf-ball text-6xl text-white opacity-50"></i>
+                    <div class="relative bg-gray-100 h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1530028828-25e8270ace32?auto=format&fit=crop&q=80&w=800" 
+                             alt="Driver Head Cover" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <img src="{{ asset('SC_Logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
+                            SC Golf
                         </div>
                     </div>
                     <div class="p-6">
@@ -236,11 +252,13 @@
 
                 <!-- Hybrid Head Cover Set -->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition group">
-                    <div class="relative bg-gray-100 h-80 flex items-center justify-center overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 opacity-90"></div>
-                        <div class="relative z-10 text-center p-8">
-                            <img src="{{ asset('SC_Logo.png') }}" alt="Smith Center Logo" class="w-32 h-32 mx-auto mb-4 filter brightness-0 invert">
-                            <i class="fas fa-layer-group text-6xl text-white opacity-50"></i>
+                    <div class="relative bg-gray-100 h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&q=80&w=800" 
+                             alt="Hybrid Head Covers" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <img src="{{ asset('SC_Logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
+                            SC Golf
                         </div>
                     </div>
                     <div class="p-6">
@@ -262,11 +280,13 @@
 
                 <!-- Putter Head Cover -->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition group">
-                    <div class="relative bg-gray-100 h-80 flex items-center justify-center overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900 opacity-90"></div>
-                        <div class="relative z-10 text-center p-8">
-                            <img src="{{ asset('SC_Logo.png') }}" alt="Smith Center Logo" class="w-32 h-32 mx-auto mb-4 filter brightness-0 invert">
-                            <i class="fas fa-hockey-puck text-6xl text-white opacity-50"></i>
+                    <div class="relative bg-gray-100 h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&q=80&w=800" 
+                             alt="Putter Head Cover" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <img src="{{ asset('SC_Logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
+                            SC Golf
                         </div>
                     </div>
                     <div class="p-6">
