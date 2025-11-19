@@ -47,6 +47,13 @@
 
                 <form action="{{ route('contact.submit') }}" method="POST" class="space-y-6">
                     @csrf
+                    
+                    <!-- Honeypot field - hidden from real users, bots will fill it -->
+                    <div style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;" aria-hidden="true">
+                        <label for="website">Website (leave blank)</label>
+                        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
+
                     <div>
                         <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Name</label>
                         <input type="text" 
