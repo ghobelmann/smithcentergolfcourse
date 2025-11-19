@@ -19,27 +19,29 @@
                 </div>
             </div>
             <div class="card-body">
-                @if(request('tournament'))
+                @if(!isset($tournament) && request('tournament'))
                     @php
                         $tournament = \App\Models\Tournament::find(request('tournament'));
                     @endphp
-                    
-                    @if($tournament)
-                        <div class="alert alert-info mb-4">
-                            <h6><i class="fas fa-info-circle me-2"></i>Tournament Information</h6>
-                            <p class="mb-2"><strong>{{ $tournament->name }}</strong></p>
-                            <p class="mb-0">
-                                This is a {{ $tournament->team_size }}-player scramble tournament. 
-                                You'll need to recruit {{ $tournament->team_size - 1 }} additional player{{ $tournament->team_size > 2 ? 's' : '' }} to complete your team.
-                            </p>
-                        </div>
-                    @endif
+                @endif
+                
+                @if(isset($tournament) && $tournament)
+                    <div class="alert alert-info mb-4">
+                        <h6><i class="fas fa-info-circle me-2"></i>Tournament Information</h6>
+                        <p class="mb-2"><strong>{{ $tournament->name }}</strong></p>
+                        <p class="mb-0">
+                            This is a {{ $tournament->team_size }}-player scramble tournament. 
+                            You'll need to recruit {{ $tournament->team_size - 1 }} additional player{{ $tournament->team_size > 2 ? 's' : '' }} to complete your team.
+                        </p>
+                    </div>
                 @endif
 
-                <form method="POST" action="{{ route('teams.store') }}">
+                <form method="POST" action="{{ isset($tournament) && $tournament ? route('tournaments.teams.store', $tournament) : route('teams.store') }}">
                     @csrf
                     
-                    @if(request('tournament'))
+                    @if(isset($tournament) && $tournament)
+                        <input type="hidden" name="tournament_id" value="{{ $tournament->id }}">
+                    @elseif(request('tournament'))
                         <input type="hidden" name="tournament_id" value="{{ request('tournament') }}">
                     @endif
 

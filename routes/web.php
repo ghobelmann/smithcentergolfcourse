@@ -251,6 +251,20 @@ Route::middleware('auth')->group(function () {
     Route::delete('/leagues-system/{league}/unenroll', [App\Http\Controllers\LeagueController::class, 'unenroll'])->name('leagues.unenroll');
 });
 
+// Admin Dashboard Routes
+Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+    
+    // Admin Tournament Management
+    Route::resource('tournaments', App\Http\Controllers\Admin\TournamentController::class);
+    
+    // Admin User Management
+    Route::resource('users', App\Http\Controllers\Admin\UserController::class);
+    
+    // Admin League Management
+    Route::resource('leagues', App\Http\Controllers\Admin\LeagueController::class);
+});
+
 // League management (admin only)
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/leagues-system/create', [App\Http\Controllers\LeagueController::class, 'create'])->name('leagues.create');

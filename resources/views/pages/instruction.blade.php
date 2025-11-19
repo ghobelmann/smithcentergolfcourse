@@ -21,90 +21,24 @@
         <div class="text-center mb-16">
             <h2 class="text-4xl font-display mb-6">Improve Your Game</h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Our PGA-certified instructors offer personalized lessons designed to help you reach your golfing goals.
+                Professional golf instruction is available at Smith Center Golf Course. Contact us for more information about lessons and pricing.
             </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                <div class="bg-emerald-600 text-white p-6">
-                    <h3 class="text-2xl font-display">Private Lessons</h3>
-                </div>
-                <div class="p-8">
-                    <p class="text-gray-600 mb-6">One-on-one instruction tailored to your specific needs and goals.</p>
-                    <ul class="space-y-3 mb-6 text-gray-600">
-                        <li class="flex items-start">
-                            <span class="text-emerald-600 mr-2">✓</span>
-                            <span>Personalized attention</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-emerald-600 mr-2">✓</span>
-                            <span>Video analysis</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-emerald-600 mr-2">✓</span>
-                            <span>Custom practice plan</span>
-                        </li>
-                    </ul>
-                    <p class="text-3xl font-bold text-gray-900 mb-2">$75</p>
-                    <p class="text-gray-600 mb-6">per hour</p>
-                    <a href="#" class="block w-full text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-700 transition">
-                        Book Now
-                    </a>
-                </div>
-            </div>
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                <div class="bg-blue-600 text-white p-6">
-                    <h3 class="text-2xl font-display">Group Lessons</h3>
-                </div>
-                <div class="p-8">
-                    <p class="text-gray-600 mb-6">Learn with friends in a fun, social environment with groups of 4-6 players.</p>
-                    <ul class="space-y-3 mb-6 text-gray-600">
-                        <li class="flex items-start">
-                            <span class="text-blue-600 mr-2">✓</span>
-                            <span>Social learning</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-600 mr-2">✓</span>
-                            <span>Group drills</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-600 mr-2">✓</span>
-                            <span>Cost effective</span>
-                        </li>
-                    </ul>
-                    <p class="text-3xl font-bold text-gray-900 mb-2">$40</p>
-                    <p class="text-gray-600 mb-6">per person</p>
-                    <a href="#" class="block w-full text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition">
-                        Book Now
-                    </a>
-                </div>
-            </div>
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                <div class="bg-purple-600 text-white p-6">
-                    <h3 class="text-2xl font-display">Junior Lessons</h3>
-                </div>
-                <div class="p-8">
-                    <p class="text-gray-600 mb-6">Fun, engaging lessons for young golfers ages 8-17 to build skills and confidence.</p>
-                    <ul class="space-y-3 mb-6 text-gray-600">
-                        <li class="flex items-start">
-                            <span class="text-purple-600 mr-2">✓</span>
-                            <span>Age-appropriate</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-purple-600 mr-2">✓</span>
-                            <span>Fun activities</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-purple-600 mr-2">✓</span>
-                            <span>Character building</span>
-                        </li>
-                    </ul>
-                    <p class="text-3xl font-bold text-gray-900 mb-2">$50</p>
-                    <p class="text-gray-600 mb-6">per hour</p>
-                    <a href="#" class="block w-full text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition">
-                        Book Now
-                    </a>
-                </div>
+
+        <!-- Contact CTA -->
+        <div class="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-2xl p-8 md:p-12 text-center">
+            <i class="fas fa-golf-ball text-5xl text-emerald-600 mb-6"></i>
+            <h3 class="text-3xl font-display text-gray-900 mb-4">Interested in Golf Lessons?</h3>
+            <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+                We offer personalized instruction for players of all skill levels. Get in touch to discuss your goals and schedule a lesson.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:785-282-3812" class="inline-flex items-center justify-center px-8 py-4 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-700 transition text-lg">
+                    <i class="fas fa-phone mr-3"></i>Call (785) 282-3812
+                </a>
+                <a href="{{ route('contact') }}" class="inline-flex items-center justify-center px-8 py-4 bg-white text-emerald-700 border-2 border-emerald-600 rounded-lg font-semibold hover:bg-emerald-50 transition text-lg">
+                    <i class="fas fa-envelope mr-3"></i>Contact Us
+                </a>
             </div>
         </div>
     </div>
