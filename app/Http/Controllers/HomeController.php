@@ -48,6 +48,11 @@ class HomeController extends Controller
         return view('pages.instruction');
     }
 
+    public function store()
+    {
+        return view('pages.store');
+    }
+
     public function contact()
     {
         return view('pages.contact');
