@@ -236,3 +236,29 @@ Route::post('/session/extend', function () {
 Route::get('/session/test', function () {
     return view('session-test');
 })->middleware('auth')->name('session.test');
+
+// League routes (public viewing)
+Route::get('/leagues-system', [App\Http\Controllers\LeagueController::class, 'index'])->name('leagues.index');
+Route::get('/leagues-system/{league}', [App\Http\Controllers\LeagueController::class, 'show'])->name('leagues.show');
+Route::get('/leagues-system/{league}/roster', [App\Http\Controllers\LeagueController::class, 'roster'])->name('leagues.roster');
+Route::get('/leagues-system/{league}/standings', [App\Http\Controllers\LeagueController::class, 'standings'])->name('leagues.standings');
+Route::get('/leagues-system/{league}/week/{week}', [App\Http\Controllers\LeagueController::class, 'weeklyStandings'])->name('leagues.weekly');
+
+// League member actions (authenticated users)
+Route::middleware('auth')->group(function () {
+    Route::post('/leagues-system/{league}/enroll', [App\Http\Controllers\LeagueController::class, 'enroll'])->name('leagues.enroll');
+    Route::delete('/leagues-system/{league}/unenroll', [App\Http\Controllers\LeagueController::class, 'unenroll'])->name('leagues.unenroll');
+});
+
+// League management (admin only)
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/admin/leagues-system/create', [App\Http\Controllers\LeagueController::class, 'create'])->name('leagues.create');
+    Route::post('/admin/leagues-system', [App\Http\Controllers\LeagueController::class, 'store'])->name('leagues.store');
+    Route::get('/admin/leagues-system/{league}/edit', [App\Http\Controllers\LeagueController::class, 'edit'])->name('leagues.edit');
+    Route::put('/admin/leagues-system/{league}', [App\Http\Controllers\LeagueController::class, 'update'])->name('leagues.update');
+    Route::delete('/admin/leagues-system/{league}', [App\Http\Controllers\LeagueController::class, 'destroy'])->name('leagues.destroy');
+    
+    // League admin actions
+    Route::post('/admin/leagues-system/{league}/calculate/{tournament}', [App\Http\Controllers\LeagueController::class, 'calculateWeekStandings'])->name('leagues.calculate-week');
+    Route::post('/admin/leagues-system/{league}/generate-tournaments', [App\Http\Controllers\LeagueController::class, 'generateWeeklyTournaments'])->name('leagues.generate-tournaments');
+});
