@@ -60,11 +60,16 @@ class HomeController extends Controller
 
     public function submitContact(Request $request)
     {
+        // Honeypot check - if the hidden "website" field is filled, it's a bot
+        if ($request->filled('website')) {
+            return back()->with('success', 'Thank you for your message!');
+        }
+
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
+            'email' => 'required|email',
             'phone' => 'nullable|string|max:20',
-            'subject' => 'required|string|max:255',
+            'subject' => 'required|string',
             'message' => 'required|string|max:2000',
         ]);
 
