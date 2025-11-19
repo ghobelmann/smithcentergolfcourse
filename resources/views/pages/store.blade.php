@@ -49,7 +49,7 @@
                              alt="Golf Hoodie" 
                              class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            <img src="{{ asset('SC_Logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
+                            <img src="{{ asset('logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
                             SC Golf
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                              alt="Golf Polo" 
                              class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            <img src="{{ asset('SC_Logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
+                            <img src="{{ asset('logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
                             SC Golf
                         </div>
                     </div>
@@ -113,7 +113,7 @@
                              alt="Golf T-Shirt" 
                              class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            <img src="{{ asset('SC_Logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
+                            <img src="{{ asset('logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
                             SC Golf
                         </div>
                     </div>
@@ -145,7 +145,7 @@
                              alt="Golf Cap" 
                              class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            <img src="{{ asset('SC_Logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
+                            <img src="{{ asset('logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
                             SC Golf
                         </div>
                     </div>
@@ -173,7 +173,7 @@
                              alt="Golf Visor" 
                              class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            <img src="{{ asset('SC_Logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
+                            <img src="{{ asset('logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
                             SC Golf
                         </div>
                     </div>
@@ -201,7 +201,7 @@
                              alt="Golf Towel" 
                              class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            <img src="{{ asset('SC_Logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
+                            <img src="{{ asset('logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
                             SC Golf
                         </div>
                     </div>
@@ -229,7 +229,7 @@
                              alt="Driver Head Cover" 
                              class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            <img src="{{ asset('SC_Logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
+                            <img src="{{ asset('logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
                             SC Golf
                         </div>
                     </div>
@@ -257,7 +257,7 @@
                              alt="Hybrid Head Covers" 
                              class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            <img src="{{ asset('SC_Logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
+                            <img src="{{ asset('logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
                             SC Golf
                         </div>
                     </div>
@@ -285,7 +285,7 @@
                              alt="Putter Head Cover" 
                              class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            <img src="{{ asset('SC_Logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
+                            <img src="{{ asset('logo.png') }}" alt="SC Logo" class="inline h-4 w-4 mr-1 filter brightness-0 invert">
                             SC Golf
                         </div>
                     </div>
