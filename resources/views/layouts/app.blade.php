@@ -57,6 +57,9 @@
                     <a href="{{ route('contact') }}" class="text-sm font-semibold text-gray-700 hover:text-emerald-600 transition {{ request()->routeIs('contact') ? 'text-emerald-600' : '' }}">
                         Contact
                     </a>
+                    <a href="https://www.facebook.com/smithcentergolf/?checkpoint_src=any" target="_blank" rel="noopener noreferrer" class="text-lg text-gray-700 hover:text-emerald-600 transition" title="Follow us on Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
 
                     @auth
                         <!-- User Dropdown -->
@@ -70,6 +73,7 @@
                                     @if(Auth::user()->isAdmin())
                                         <div class="border-t border-gray-100"></div>
                                         <a href="{{ route('tournaments.create') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Create Tournament</a>
+                                        <a href="{{ route('leagues.index') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Manage Leagues</a>
                                         <a href="{{ route('courses.index') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Manage Courses</a>
                                     @endif
                                     <div class="border-t border-gray-100"></div>
@@ -110,13 +114,17 @@
                 <a href="{{ route('instruction') }}" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:text-emerald-600 hover:bg-gray-50">Instruction</a>
                 <a href="{{ route('store') }}" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:text-emerald-600 hover:bg-gray-50">Store</a>
                 <a href="{{ route('contact') }}" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:text-emerald-600 hover:bg-gray-50">Contact</a>
-                
+                <a href="https://www.facebook.com/smithcentergolf/?checkpoint_src=any" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:text-emerald-600 hover:bg-gray-50">
+                    <i class="fab fa-facebook mr-2"></i>Facebook
+                </a>
+
                 @auth
                     <div class="border-t border-gray-200 pt-2">
                         <div class="px-3 py-2 text-sm text-gray-500">{{ Auth::user()->name }}</div>
                         <a href="{{ route('profile.edit') }}" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:text-emerald-600 hover:bg-gray-50">Profile</a>
                         @if(Auth::user()->isAdmin())
                             <a href="{{ route('tournaments.create') }}" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:text-emerald-600 hover:bg-gray-50">Create Tournament</a>
+                            <a href="{{ route('leagues.index') }}" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:text-emerald-600 hover:bg-gray-50">Manage Leagues</a>
                             <a href="{{ route('courses.index') }}" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:text-emerald-600 hover:bg-gray-50">Manage Courses</a>
                         @endif
                         <form method="POST" action="{{ route('logout') }}">
@@ -210,10 +218,10 @@
                 <div>
                     <h4 class="text-sm font-semibold mb-4 text-gray-300">Contact</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
-                        <li>123 Golf Course Road</li>
+                        <li>20082 US-281</li>
                         <li>Smith Center, KS 66967</li>
-                        <li class="mt-3">(555) 123-4567</li>
-                        <li>info@smithcentergolf.com</li>
+                        <li class="mt-3">(785) 282-3812</li>
+                        <li>smithcentergolfcourse@gmail.com</li>
                     </ul>
                 </div>
             </div>

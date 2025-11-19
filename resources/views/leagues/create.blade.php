@@ -172,7 +172,28 @@
 
                 <!-- Points System -->
                 <div>
-                    <h2 class="text-xl font-semibold text-gray-900 mb-4 pb-2 border-b">Points System</h2>
+                    <h2 class="text-xl font-semibold text-gray-900 mb-4 pb-2 border-b">Scoring Format</h2>
+                    
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-info-circle text-blue-500"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-sm font-medium text-blue-800">Four-Ball Best Ball Match Play</h3>
+                                <div class="mt-2 text-sm text-blue-700">
+                                    <ul class="list-disc list-inside space-y-1">
+                                        <li>Each hole is worth <strong>1 point</strong></li>
+                                        <li><strong>9 holes = 9 points</strong> possible per week</li>
+                                        <li>Both players play their own ball</li>
+                                        <li>Team score = <strong>best ball</strong> (lower score of the two partners)</li>
+                                        <li>Team with lowest score wins the hole (1 point)</li>
+                                        <li>If tied, the hole is <strong>halved</strong> (0.5 points each team)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     
                     <div class="space-y-4">
                         <div>
@@ -182,13 +203,13 @@
                             <select name="points_system" id="points_system" required
                                     class="w-full rounded-lg border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500">
                                 <option value="placement" {{ old('points_system', 'placement') === 'placement' ? 'selected' : '' }}>
-                                    Placement-Based (1st=10pts, 2nd=9pts, etc.)
+                                    Match Play (Hole-by-Hole) - Recommended for Four-Ball
                                 </option>
                                 <option value="custom" {{ old('points_system') === 'custom' ? 'selected' : '' }}>
-                                    Custom Points Structure
+                                    Stroke Play (Total Score)
                                 </option>
                             </select>
-                            <p class="mt-1 text-xs text-gray-500">Default: 10-9-8-7-6-5-4-3-2-1 points for top 10 teams</p>
+                            <p class="mt-1 text-xs text-gray-500">Match Play: Each hole won = 1 point | Stroke Play: Points based on overall finish</p>
                         </div>
 
                         <div class="flex items-center">

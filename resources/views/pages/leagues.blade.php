@@ -40,8 +40,8 @@
                                 Schedule
                             </h3>
                             <div class="text-gray-700 space-y-2 ml-9">
-                                <p><span class="font-semibold">Day:</span> Tuesday Evenings</p>
-                                <p><span class="font-semibold">Time:</span> 5:30 PM Tee Time</p>
+                                <p><span class="font-semibold">Day:</span> Wednesday Evenings</p>
+                                <p><span class="font-semibold">Time:</span> 6:00 PM Tee Time</p>
                                 <p><span class="font-semibold">Season:</span> May through August</p>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                             </h3>
                             <div class="text-gray-700 space-y-2 ml-9">
                                 <p>9 Holes Weekly</p>
-                                <p>Individual Stroke Play</p>
+                                <p>2 Man Teams - Four Ball</p>
                                 <p>Handicap System Used</p>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                             </h3>
                             <div class="text-gray-700 space-y-2 ml-9">
                                 <p><span class="font-semibold">Registration:</span> $50 per season</p>
-                                <p><span class="font-semibold">Weekly:</span> $12 per week</p>
+                                <p><span class="font-semibold">Pin Prizes:</span> $20</p>
                             </div>
                         </div>
 
@@ -113,8 +113,8 @@
                                 Schedule
                             </h3>
                             <div class="text-gray-700 space-y-2 ml-9">
-                                <p><span class="font-semibold">Day:</span> Wednesday Mornings</p>
-                                <p><span class="font-semibold">Time:</span> 9:00 AM Tee Time</p>
+                                <p><span class="font-semibold">Day:</span> Tuesday Evenings</p>
+                                <p><span class="font-semibold">Time:</span> 6:00 PM Tee Time</p>
                                 <p><span class="font-semibold">Season:</span> May through August</p>
                             </div>
                         </div>
@@ -139,8 +139,7 @@
                                 Fees
                             </h3>
                             <div class="text-gray-700 space-y-2 ml-9">
-                                <p><span class="font-semibold">Registration:</span> $50 per season</p>
-                                <p><span class="font-semibold">Weekly:</span> $12 per week</p>
+                                <p><span class="font-semibold">Registration:</span> TBD</p>
                             </div>
                         </div>
 

@@ -205,6 +205,44 @@ class League extends Model
     }
 
     /**
+     * Calculate match play points (hole-by-hole best ball)
+     * Each hole won = 1 point, tied = 0.5 points each
+     * 
+     * @param array $team1Scores Array of hole scores for team 1's best ball
+     * @param array $team2Scores Array of hole scores for team 2's best ball
+     * @return array ['team1_points' => float, 'team2_points' => float]
+     */
+    public function calculateMatchPlayPoints(array $team1Scores, array $team2Scores): array
+    {
+        $team1Points = 0;
+        $team2Points = 0;
+        
+        $holes = min(count($team1Scores), count($team2Scores));
+        
+        for ($i = 0; $i < $holes; $i++) {
+            $team1BestBall = $team1Scores[$i];
+            $team2BestBall = $team2Scores[$i];
+            
+            if ($team1BestBall < $team2BestBall) {
+                // Team 1 wins the hole
+                $team1Points += 1;
+            } elseif ($team2BestBall < $team1BestBall) {
+                // Team 2 wins the hole
+                $team2Points += 1;
+            } else {
+                // Hole is halved (tied)
+                $team1Points += 0.5;
+                $team2Points += 0.5;
+            }
+        }
+        
+        return [
+            'team1_points' => $team1Points,
+            'team2_points' => $team2Points,
+        ];
+    }
+
+    /**
      * Get week by number
      */
     public function getWeek(int $weekNumber): ?Tournament

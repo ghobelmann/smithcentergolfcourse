@@ -20,64 +20,28 @@
 <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                     alt="Golf Course" 
+            <div class="flex justify-center items-center">
+                <img src="{{ asset('SC-Map.png') }}" 
+                     alt="Smith Center Municipal Golf Course Map" 
                      class="w-full rounded-2xl shadow-2xl">
             </div>
             <div>
-                <h2 class="text-4xl font-display mb-6">Our Story</h2>
-                <p class="text-xl text-gray-600 mb-6 leading-relaxed">
-                    Welcome to Smith Center Golf Course, a premier golfing destination that has been serving the community for decades.
+                <h2 class="text-4xl font-display mb-6">About Our Course</h2>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    The Smith Center Municipal Golf Course is located 4.3 miles south of town along highway 281. This course is a beautifully maintained course with a driving range and practice green. Open from sunrise to sunset to accommodate everyone. Take a break between rounds at our clubhouse where you will find restrooms, a television, recent news, schedules, and more!
                 </p>
                 <p class="text-gray-600 mb-4 leading-relaxed">
-                    Our 18-hole championship course offers a challenging yet enjoyable experience for golfers of all skill levels. 
-                    Nestled in the heart of Kansas, our course features well-maintained greens, strategic bunkers, and beautiful natural landscapes.
+                    Greens fees are $10/weekday for 9 holes; $20/weekday for 18 holes; or weekend and holiday rates of $20 for 9 holes and $30 for 18 holes. Rental golf carts are $20 per use. Discounted ticket books are available for purchase at the city office. Ticket books are $100 for 10 tickets. Ticket books also make a great gift!
+                </p>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    Debit/Credit cards are accepted (self-service) at the clubhouse for daily greens fees and rental carts; cash and check payments continue to be accepted as well, utilizing the pay envelopes and drop box at the clubhouse.
+                </p>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    Several tournaments are held throughout the season and will be posted each Spring. Additional information can also be found on the <a href="https://www.facebook.com/smithcentergolf/?checkpoint_src=any" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:text-emerald-700 font-semibold">Facebook page</a>.
                 </p>
                 <p class="text-gray-600 leading-relaxed">
-                    Whether you're a seasoned pro or just starting out, our friendly staff and excellent facilities ensure 
-                    an unforgettable golfing experience every time you visit.
+                    Interested in becoming a member? Check out our membership and payment options on included on this page. If you are unable to view the membership options and tournament schedules, please contact the city offices at <a href="tel:785-282-3812" class="text-emerald-600 hover:text-emerald-700 font-semibold">(785) 282-3812</a>.
                 </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Course Features Section -->
-<section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl sm:text-5xl font-display text-center mb-16">Course Features</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition">
-                <div class="w-20 h-20 mx-auto mb-6 bg-emerald-100 rounded-2xl flex items-center justify-center">
-                    <i class="fas fa-flag text-4xl text-emerald-600"></i>
-                </div>
-                <h3 class="text-xl font-display mb-3">18 Holes</h3>
-                <p class="text-gray-600">Championship course with varying difficulty</p>
-            </div>
-
-            <div class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition">
-                <div class="w-20 h-20 mx-auto mb-6 bg-emerald-100 rounded-2xl flex items-center justify-center">
-                    <i class="fas fa-golf-ball text-4xl text-emerald-600"></i>
-                </div>
-                <h3 class="text-xl font-display mb-3">Practice Facilities</h3>
-                <p class="text-gray-600">Driving range and putting greens</p>
-            </div>
-
-            <div class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition">
-                <div class="w-20 h-20 mx-auto mb-6 bg-emerald-100 rounded-2xl flex items-center justify-center">
-                    <i class="fas fa-store text-4xl text-emerald-600"></i>
-                </div>
-                <h3 class="text-xl font-display mb-3">Pro Shop</h3>
-                <p class="text-gray-600">Full-service shop with equipment and apparel</p>
-            </div>
-
-            <div class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition">
-                <div class="w-20 h-20 mx-auto mb-6 bg-emerald-100 rounded-2xl flex items-center justify-center">
-                    <i class="fas fa-utensils text-4xl text-emerald-600"></i>
-                </div>
-                <h3 class="text-xl font-display mb-3">Clubhouse</h3>
-                <p class="text-gray-600">Snacks and beverages available</p>
             </div>
         </div>
     </div>
@@ -108,6 +72,33 @@
                 <div class="grid grid-cols-2 p-6 hover:bg-gray-100 transition">
                     <div class="font-semibold text-gray-900">Grass Type</div>
                     <div class="text-gray-600">Bent Grass Greens, Bluegrass Fairways</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scorecards Section -->
+        <div class="mt-16">
+            <h3 class="text-3xl font-display text-center mb-8">Scorecards</h3>
+            <div class="space-y-8">
+                <div class="text-center">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-4">Red Tees</h4>
+                    <img src="{{ asset('sc_red.png') }}" 
+                         alt="Smith Center Golf Course - Red Tees Scorecard" 
+                         class="w-full max-w-4xl mx-auto rounded-xl shadow-lg">
+                </div>
+                
+                <div class="text-center">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-4">White Tees</h4>
+                    <img src="{{ asset('sc_white.png') }}" 
+                         alt="Smith Center Golf Course - White Tees Scorecard" 
+                         class="w-full max-w-4xl mx-auto rounded-xl shadow-lg">
+                </div>
+                
+                <div class="text-center">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-4">Blue Tees</h4>
+                    <img src="{{ asset('sc_blue.png') }}" 
+                         alt="Smith Center Golf Course - Blue Tees Scorecard" 
+                         class="w-full max-w-4xl mx-auto rounded-xl shadow-lg">
                 </div>
             </div>
         </div>
