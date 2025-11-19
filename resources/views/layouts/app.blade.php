@@ -20,7 +20,7 @@
 </head>
 <body class="bg-gray-50 font-sans antialiased">
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-200" x-data="{ open: false }">
+    <nav class="bg-white shadow-sm fixed top-0 left-0 right-0 z-50 border-b border-gray-200" x-data="{ open: false }">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
@@ -42,11 +42,11 @@
                     <a href="{{ route('rates') }}" class="text-sm font-semibold text-gray-700 hover:text-emerald-600 transition {{ request()->routeIs('rates') ? 'text-emerald-600' : '' }}">
                         Rates
                     </a>
-                    <a href="{{ route('tee-times') }}" class="text-sm font-semibold text-gray-700 hover:text-emerald-600 transition {{ request()->routeIs('tee-times') ? 'text-emerald-600' : '' }}">
-                        Tee Times
-                    </a>
                     <a href="{{ route('tournaments.index') }}" class="text-sm font-semibold text-gray-700 hover:text-emerald-600 transition {{ request()->routeIs('tournaments.*') ? 'text-emerald-600' : '' }}">
                         Tournaments
+                    </a>
+                    <a href="{{ route('leagues') }}" class="text-sm font-semibold text-gray-700 hover:text-emerald-600 transition {{ request()->routeIs('leagues') ? 'text-emerald-600' : '' }}">
+                        Leagues
                     </a>
                     <a href="{{ route('instruction') }}" class="text-sm font-semibold text-gray-700 hover:text-emerald-600 transition {{ request()->routeIs('instruction') ? 'text-emerald-600' : '' }}">
                         Instruction
@@ -102,8 +102,8 @@
                 <a href="{{ route('home') }}" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:text-emerald-600 hover:bg-gray-50">Home</a>
                 <a href="{{ route('about') }}" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:text-emerald-600 hover:bg-gray-50">About</a>
                 <a href="{{ route('rates') }}" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:text-emerald-600 hover:bg-gray-50">Rates</a>
-                <a href="{{ route('tee-times') }}" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:text-emerald-600 hover:bg-gray-50">Tee Times</a>
                 <a href="{{ route('tournaments.index') }}" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:text-emerald-600 hover:bg-gray-50">Tournaments</a>
+                <a href="{{ route('leagues') }}" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:text-emerald-600 hover:bg-gray-50">Leagues</a>
                 <a href="{{ route('instruction') }}" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:text-emerald-600 hover:bg-gray-50">Instruction</a>
                 <a href="{{ route('contact') }}" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:text-emerald-600 hover:bg-gray-50">Contact</a>
                 
@@ -163,7 +163,7 @@
     @endif
 
     <!-- Page Content -->
-    <main class="min-h-screen">
+    <main class="min-h-screen pt-16">
         @if(isset($slot))
             {{ $slot }}
         @else
@@ -187,8 +187,8 @@
                     <ul class="space-y-2">
                         <li><a href="{{ route('home') }}" class="text-gray-400 hover:text-white text-sm transition">Home</a></li>
                         <li><a href="{{ route('rates') }}" class="text-gray-400 hover:text-white text-sm transition">Rates</a></li>
-                        <li><a href="{{ route('tee-times') }}" class="text-gray-400 hover:text-white text-sm transition">Tee Times</a></li>
                         <li><a href="{{ route('tournaments.index') }}" class="text-gray-400 hover:text-white text-sm transition">Tournaments</a></li>
+                        <li><a href="{{ route('leagues') }}" class="text-gray-400 hover:text-white text-sm transition">Leagues</a></li>
                     </ul>
                 </div>
                 

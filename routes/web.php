@@ -14,6 +14,7 @@ Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/facilities', [HomeController::class, 'facilities'])->name('facilities');
 Route::get('/rates', [HomeController::class, 'rates'])->name('rates');
 Route::get('/tee-times', [HomeController::class, 'teeTimes'])->name('tee-times');
+Route::get('/leagues', [HomeController::class, 'leagues'])->name('leagues');
 Route::get('/instruction', [HomeController::class, 'instruction'])->name('instruction');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 

@@ -4,9 +4,9 @@
 <!-- Hero Section -->
 <section class="relative bg-gray-900 py-20">
     <div class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1530028828-25e8270ace32?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=80" 
+        <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&q=80&w=2000" 
              alt="Golf Instruction" 
-             class="w-full h-full object-cover opacity-30">
+             class="w-full h-full object-cover opacity-40">
     </div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-5xl sm:text-6xl font-display text-white mb-6">Golf Instruction</h1>
